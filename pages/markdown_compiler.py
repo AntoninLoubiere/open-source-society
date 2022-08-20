@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 import json
 from pathlib import Path
+import re
 import frontmatter
 import shutil
 from urllib.parse import urlparse
@@ -17,13 +18,17 @@ FIELDS_URLS_OPTIONAL = [
     "website",
     "license",
     "repository",
-    "issue-tracker",
-    "pull-request",
-    "financial-support",
+    "issue_tracker",
+    "pull_request",
+    "financial_support",
 ]
 FIELDS_URL_MAPPER = {}
 FIELDS_TO_COPY = ["title", "tags", "layout"] + FIELDS_URLS_OPTIONAL
 FIELDS_REQUIRED = set(["title", "description"])
+
+AUTO_LAYOUT = {
+    re.compile('projects/*'): 'opensource-projects',
+}
 
 
 def log(message, label="OK"):
@@ -35,32 +40,44 @@ def load_files():
     path_to_id: dict[str, dict[str, str]] = {}
     all_ids = set()
 
+    def _add_file(locale: str, file: Path, current_id: str | None=""):
+        if not file.is_file():
+            print(file, "should exists.")
+            return ""
+
+        markdown_file = frontmatter.load(file)
+        file_id = "" if current_id is None else current_id + (
+            file.stem
+            if locale == REFERENCE_LOCALE
+            else markdown_file.get("id", None) or file.stem
+        )
+
+        if file_id not in pages:
+            pages[file_id] = {}
+
+        relative_filepath = file.relative_to(INPUT_PATH)
+        if markdown_file.content.strip():
+            pages[file_id][locale] =relative_filepath
+        else:
+            log(relative_filepath, "SKIPPED")
+
+        if current_id is None:
+            path_to_id[locale][""] = file_id
+        else:
+            path_to_id[locale][file.relative_to(INPUT_PATH / locale).with_suffix('').as_posix()] = file_id
+        all_ids.add(file_id)
+        return file_id
+
     def _load_sub_files(locale: str, path: Path, current_id=""):
         for file in path.glob("*.md"):
-            markdown_file = frontmatter.load(file)
-            file_id = current_id + (
-                file.stem
-                if locale == REFERENCE_LOCALE
-                else markdown_file.get("id", None) or file.stem
-            )
-
-            if file_id not in pages:
-                pages[file_id] = {}
-
-            if markdown_file.content.strip():
-                pages[file_id][locale] = file.relative_to(INPUT_PATH)
-            else:
-                log(file.relative_to(INPUT_PATH), "SKIPPED")
-            path_to_id[locale][
-                file.relative_to(INPUT_PATH / locale).with_suffix("").as_posix()
-            ] = file_id
-            all_ids.add(file_id)
+            file_id = _add_file(locale, file, current_id)
 
             if (path / file.stem).is_dir():
                 _load_sub_files(locale, path / file.stem, file_id + "/")
 
     for locale in LOCALES:
         path_to_id[locale] = {}
+        _add_file(locale, INPUT_PATH / (locale + '.md'), None)
         _load_sub_files(
             locale,
             INPUT_PATH / locale,
@@ -140,6 +157,11 @@ def run(clean=True):
                                     "url"
                                 ]
 
+                if 'layout' not in markdown_file:
+                    for reg, lay in AUTO_LAYOUT.items():
+                        if reg.match(id):
+                            markdown_file['layout'] = lay
+
                 if not FIELDS_REQUIRED.issubset(markdown_file.keys()):
                     missing_fields = FIELDS_REQUIRED.difference(markdown_file.keys())
                     log(
@@ -166,7 +188,7 @@ def run(clean=True):
     with open(file, "w") as fiw:
         json.dump(
             {
-                id: {loc: path.as_posix() for loc, path in pages[id].items()}
+                id: {loc: path.with_suffix('').as_posix() for loc, path in pages[id].items()}
                 for id in all_ids
             },
             fiw,
