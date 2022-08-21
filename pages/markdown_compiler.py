@@ -22,12 +22,15 @@ FIELDS_URLS_OPTIONAL = [
     "pull_request",
     "financial_support",
 ]
+
+FIELDS_URLS_OPTIONAL_MULTIPLE_ITEM = ["financial_support"]
+
 FIELDS_URL_MAPPER = {}
 FIELDS_TO_COPY = ["title", "tags", "layout"] + FIELDS_URLS_OPTIONAL
 FIELDS_REQUIRED = set(["title", "description"])
 
 AUTO_LAYOUT = {
-    re.compile('projects/*'): 'opensource-projects',
+    re.compile("projects/*"): "opensource-projects",
 }
 
 
@@ -40,16 +43,21 @@ def load_files():
     path_to_id: dict[str, dict[str, str]] = {}
     all_ids = set()
 
-    def _add_file(locale: str, file: Path, current_id: str | None=""):
+    def _add_file(locale: str, file: Path, current_id: str | None = ""):
         if not file.is_file():
             print(file, "should exists.")
             return ""
 
         markdown_file = frontmatter.load(file)
-        file_id = "" if current_id is None else current_id + (
-            file.stem
-            if locale == REFERENCE_LOCALE
-            else markdown_file.get("id", None) or file.stem
+        file_id = (
+            ""
+            if current_id is None
+            else current_id
+            + (
+                file.stem
+                if locale == REFERENCE_LOCALE
+                else markdown_file.get("id", None) or file.stem
+            )
         )
 
         if file_id not in pages:
@@ -57,14 +65,16 @@ def load_files():
 
         relative_filepath = file.relative_to(INPUT_PATH)
         if markdown_file.content.strip():
-            pages[file_id][locale] =relative_filepath
+            pages[file_id][locale] = relative_filepath
         else:
             log(relative_filepath, "SKIPPED")
 
         if current_id is None:
             path_to_id[locale][""] = file_id
         else:
-            path_to_id[locale][file.relative_to(INPUT_PATH / locale).with_suffix('').as_posix()] = file_id
+            path_to_id[locale][
+                file.relative_to(INPUT_PATH / locale).with_suffix("").as_posix()
+            ] = file_id
         all_ids.add(file_id)
         return file_id
 
@@ -77,7 +87,7 @@ def load_files():
 
     for locale in LOCALES:
         path_to_id[locale] = {}
-        _add_file(locale, INPUT_PATH / (locale + '.md'), None)
+        _add_file(locale, INPUT_PATH / (locale + ".md"), None)
         _load_sub_files(
             locale,
             INPUT_PATH / locale,
@@ -119,48 +129,12 @@ def run(clean=True):
 
                 for field in FIELDS_URLS_OPTIONAL:
                     if field in markdown_file:
-                        if isinstance(markdown_file[field], str):
-                            url = urlparse(markdown_file[field])
-                            if url.scheme:
-                                markdown_file[field] = {
-                                    "name": url.hostname,
-                                    "url": markdown_file[field],
-                                }
-                            elif (
-                                field in FIELDS_URL_MAPPER
-                                and markdown_file[field].lower()
-                                in FIELDS_URL_MAPPER[field]
-                            ):
-                                markdown_file[field] = {
-                                    "name": markdown_file[field],
-                                    "url": FIELDS_URL_MAPPER[field][
-                                        markdown_file[field].lower()
-                                    ],
-                                }
-                            else:
-                                markdown_file[field] = {
-                                    "name": markdown_file[field],
-                                }
-                        elif isinstance(markdown_file[field], dict):
-                            if "name" in markdown_file[field]:
-                                if (
-                                    "url" not in markdown_file[field]
-                                    and field in FIELDS_URL_MAPPER
-                                    and markdown_file[field]["name"].lower()
-                                    in FIELDS_URL_MAPPER[field]
-                                ):
-                                    markdown_file[field]["url"] = FIELDS_URL_MAPPER[
-                                        field
-                                    ][markdown_file[field]["name"].lower()]
-                            elif "url" in markdown_file[field]:
-                                markdown_file[field]["name"] = markdown_file[field][
-                                    "url"
-                                ]
+                        markdown_file[field] = get_url_field_data(markdown_file[field], field)
 
-                if 'layout' not in markdown_file:
+                if "layout" not in markdown_file:
                     for reg, lay in AUTO_LAYOUT.items():
                         if reg.match(id):
-                            markdown_file['layout'] = lay
+                            markdown_file["layout"] = lay
 
                 if not FIELDS_REQUIRED.issubset(markdown_file.keys()):
                     missing_fields = FIELDS_REQUIRED.difference(markdown_file.keys())
@@ -168,7 +142,6 @@ def run(clean=True):
                         f"{files[loc]} doesn't have the required field{'s' if len(missing_fields) != 1 else ''}: {', '.join(missing_fields)}",
                         "WARNING",
                     )
-
                 output_file.parent.mkdir(parents=True, exist_ok=True)
                 frontmatter.dump(markdown_file, output_file)
                 log(files[loc])
@@ -188,11 +161,52 @@ def run(clean=True):
     with open(file, "w") as fiw:
         json.dump(
             {
-                id: {loc: path.with_suffix('').as_posix() for loc, path in pages[id].items()}
+                id: {
+                    loc: path.with_suffix("").as_posix()
+                    for loc, path in pages[id].items()
+                }
                 for id in all_ids
             },
             fiw,
         )
+
+
+def get_url_field_data(input_data, field):
+    if isinstance(input_data, str):
+        url = urlparse(input_data)
+        if url.scheme:
+            return {
+                "name": url.hostname,
+                "url": input_data,
+            }
+        elif (
+            field in FIELDS_URL_MAPPER
+            and input_data.lower() in FIELDS_URL_MAPPER[field]
+        ):
+            return {
+                "name": input_data,
+                "url": FIELDS_URL_MAPPER[field][input_data.lower()],
+            }
+        else:
+            return {
+                "name": input_data,
+            }
+    elif isinstance(input_data, dict):
+        if "name" in input_data:
+            if (
+                "url" not in input_data
+                and field in FIELDS_URL_MAPPER
+                and input_data["name"].lower()
+                in FIELDS_URL_MAPPER[field]
+            ):
+                input_data["url"] = FIELDS_URL_MAPPER[field][
+                    input_data["name"].lower()
+                ]
+        elif "url" in input_data:
+            input_data["name"] = input_data["url"]
+        return input_data
+    elif isinstance(input_data, list):
+        return [get_url_field_data(i, field) for i in input_data]
 
 
 run()

@@ -9,3 +9,5 @@ node_modules
 
 src/routes/en
 src/routes/fr
+.~*#
+locales/*.json

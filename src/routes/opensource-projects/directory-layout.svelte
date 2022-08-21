@@ -1,6 +1,5 @@
 <script>
-    import '$lib/markdown.css'
-
+    import '$lib/markdown.css';
 </script>
 
-<div class="markdown"><slot/></div>
+<div class="markdown"><slot /></div>

@@ -13,6 +13,10 @@ const config = {
         }),
         mdsvex({
             extensions: ['.svx', '.md'],
+            layout: {
+                'opensource-projects': 'src/routes/opensource-projects/layout.svelte',
+                'opensource-projects-dir': 'src/routes/opensource-projects/directory-layout.svelte',
+            },
         }),
     ],
 

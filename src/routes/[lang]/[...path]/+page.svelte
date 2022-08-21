@@ -1,7 +1,5 @@
 <script lang="ts">
-    export let data: {available_lang: Record<string, string>};
-
-    console.log(data.available_lang)
+    export let data: { available_lang: Record<string, string> };
 </script>
 
 Available in :
