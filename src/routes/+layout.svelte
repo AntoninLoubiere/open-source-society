@@ -3,6 +3,5 @@
 
     import '../app.css';
 </script>
-
-{$t('hello')}
+TODO Layout
 <slot />

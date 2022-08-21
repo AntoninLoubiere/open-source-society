@@ -19,15 +19,19 @@ FIELDS_URLS_OPTIONAL = [
     "license",
     "repository",
     "issue_tracker",
-    "pull_request",
+    "contributions",
     "financial_support",
 ]
 
 FIELDS_URLS_OPTIONAL_MULTIPLE_ITEM = ["financial_support"]
 
-FIELDS_URL_MAPPER = {}
+FIELDS_URL_MAPPER = {
+    'license': {
+        'MPL': 'https://www.mozilla.org/MPL/'
+    }
+}
 FIELDS_TO_COPY = ["title", "tags", "layout"] + FIELDS_URLS_OPTIONAL
-FIELDS_REQUIRED = set(["title", "description"])
+FIELDS_REQUIRED = set(["title", "summary"])
 
 AUTO_LAYOUT = {
     re.compile("projects/*"): "opensource-projects",
@@ -175,8 +179,8 @@ def get_url_field_data(input_data, field):
     if isinstance(input_data, str):
         url = urlparse(input_data)
         if url.scheme:
-            return {
-                "name": url.hostname,
+                        return {
+                "name": f"{url.netloc}{url.path}",
                 "url": input_data,
             }
         elif (

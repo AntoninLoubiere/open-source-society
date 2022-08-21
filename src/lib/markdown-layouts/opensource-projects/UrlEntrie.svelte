@@ -1,10 +1,9 @@
-<script>
-    // @ts-nocheck
+<script lang="ts">
     import { t } from 'svelte-intl-precompile';
     import UrlEntrieData from './UrlEntrieData.svelte';
 
-    export let label;
-    export let data;
+    export let label: string;
+    export let data: URLField;
 
     $: nb = Array.isArray(data) ? data.length : 1;
 </script>

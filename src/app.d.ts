@@ -7,3 +7,5 @@ declare namespace App {
     // interface PrivateEnv {}
     // interface PublicEnv {}
 }
+
+type URLField = undefined | string | string[];

@@ -14,8 +14,11 @@ const config = {
         mdsvex({
             extensions: ['.svx', '.md'],
             layout: {
-                'opensource-projects': 'src/routes/opensource-projects/layout.svelte',
-                'opensource-projects-dir': 'src/routes/opensource-projects/directory-layout.svelte',
+                'opensource-projects':
+                    'src/lib/markdown-layouts/opensource-projects/project.svelte',
+                'opensource-projects-dir':
+                    'src/lib/markdown-layouts/opensource-projects/directory.svelte',
+                _: 'src/lib/markdown-layouts/default.svelte',
             },
         }),
     ],

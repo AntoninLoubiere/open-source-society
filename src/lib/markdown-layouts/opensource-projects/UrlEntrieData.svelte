@@ -1,8 +1,7 @@
-<script>
-    // @ts-nocheck
+<script lang="ts">
     import { t } from 'svelte-intl-precompile';
 
-    export let data;
+    export let data: URLField;
 </script>
 
 {#if data?.url}
