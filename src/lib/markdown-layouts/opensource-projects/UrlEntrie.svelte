@@ -3,7 +3,7 @@
     import UrlEntrieData from './UrlEntrieData.svelte';
 
     export let label: string;
-    export let data: URLField;
+    export let data: FrontmatterURLField;
 
     $: nb = Array.isArray(data) ? data.length : 1;
 </script>

@@ -32,6 +32,11 @@ const config = {
             'src/*': 'app/src',
         },
     },
+    vitePlugin: {
+        experimental: {
+            useVitePreprocess: true,
+        },
+    },
 };
 
 export default config;

@@ -6,4 +6,4 @@ layout: opensource-projects-dir
 
 ### Browsers
 
-- [Firefox](office-suite/firefox)
+-   [Firefox](office-suite/firefox)

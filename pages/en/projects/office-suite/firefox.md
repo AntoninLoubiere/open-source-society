@@ -8,6 +8,15 @@ license: MPL
 issue_tracker: https://bugzilla.mozilla.org
 contributions: https://www.mozilla.org/contribute
 financial_support: https://donate.mozilla.org
+repository: https://hg.mozilla.org
+tags:
+    - app
+    - desktop
+    - windows
+    - linux
+    - macos
+    - office-suite
+    - browser
 ---
 
 # Firefox

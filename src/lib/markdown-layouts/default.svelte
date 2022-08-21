@@ -1,21 +1,13 @@
 <script context="module">
-  import a from './html_components/a.svelte';
-  export { a };
+    import a from '../components/a.svelte';
+    export { a };
 </script>
 
 <script>
     // @ts-nocheck
-    export let title;
-    $: titleHead = title ? title + " - Open Source Society" : "Open Source Society";
 
-    import './markdown.css'
+    import BaseLayout from './BaseLayout.svelte';
+    export let title;
 </script>
 
-
-<svelte:head>
-    <title>{titleHead}</title>
-</svelte:head>
-
-<article class="markdown">
-    <slot></slot>
-</article>
+<BaseLayout {title}><slot /></BaseLayout>

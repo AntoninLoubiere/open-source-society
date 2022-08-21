@@ -8,4 +8,8 @@ declare namespace App {
     // interface PublicEnv {}
 }
 
-type URLField = undefined | string | string[];
+interface FrontmatterUrl {
+    name: string;
+    url?: string;
+}
+type FrontmatterURLField = undefined | FrontmatterUrl | FrontmatterUrl[];

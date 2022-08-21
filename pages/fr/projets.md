@@ -5,4 +5,4 @@ title: Projets
 
 # Projets Open Source
 
-- [Bureautique](projets/bureautique)
+-   [Bureautique](projets/bureautique)

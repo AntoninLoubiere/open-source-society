@@ -25,9 +25,10 @@ FIELDS_URLS_OPTIONAL = [
 
 FIELDS_URLS_OPTIONAL_MULTIPLE_ITEM = ["financial_support"]
 
+# IMPORTANT: key should be in lowercase
 FIELDS_URL_MAPPER = {
     'license': {
-        'MPL': 'https://www.mozilla.org/MPL/'
+        'mpl': 'https://www.mozilla.org/MPL/'
     }
 }
 FIELDS_TO_COPY = ["title", "tags", "layout"] + FIELDS_URLS_OPTIONAL

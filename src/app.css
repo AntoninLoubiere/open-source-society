@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .link {
+        @apply text-primary;
+    }
+
+    .link:visited {
+        @apply text-primary-400;
+    }
+
+    .link:hover {
+        @apply underline;
+    }
+}

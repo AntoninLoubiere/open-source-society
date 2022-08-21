@@ -1,12 +1,12 @@
 <script context="module">
-  import a from '../html_components/a.svelte';
-  export { a };
+    import a from '../../components/a.svelte';
+    export { a };
 </script>
 
 <script>
     // @ts-nocheck
     import UrlEntrie from './UrlEntrie.svelte';
-    import '../markdown.css';
+    import BaseLayout from '../BaseLayout.svelte';
 
     export let title;
     export let maintainer;
@@ -18,11 +18,7 @@
     export let financial_support;
 </script>
 
-<svelte:head>
-    <title>{title} - Open Source Society</title>
-</svelte:head>
-
-<article class="markdown">
+<BaseLayout {title}>
     <h1>{title}</h1>
 
     <UrlEntrie label="maintainer" data={maintainer} />
@@ -34,4 +30,4 @@
     <UrlEntrie label="financial_support" data={financial_support} />
 
     <slot />
-</article>
+</BaseLayout>

@@ -1,9 +1,8 @@
 <script lang="ts">
-import { browser } from "$app/env";
+    import { browser } from '$app/env';
 
-import { goto } from "$app/navigation";
-import { getLocaleFromNavigator } from "svelte-intl-precompile";
-
+    import { goto } from '$app/navigation';
+    import { getLocaleFromNavigator } from 'svelte-intl-precompile';
 
     if (browser) {
         const locale = getLocaleFromNavigator()?.match(/([a-z]+)-?.*/)?.[1];

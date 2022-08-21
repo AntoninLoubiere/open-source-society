@@ -6,4 +6,4 @@ layout: opensource-projects-dir
 
 # Open Source Projects
 
-- [Office Suite](projects/office-suite)
+-   [Office Suite](projects/office-suite)
