@@ -26,7 +26,7 @@
     }
 </script>
 
-<div class="flex flex-wrap items-center gap-1">
+<div class="flex h-6 flex-wrap items-center gap-1">
     {#each items as { label, href, id }}
         {@const isLastItem = id == items.length - 1}
         <div class:text-gray-600={!isLastItem} class:text-primary={isLastItem} class="inline-block">

@@ -5,8 +5,10 @@
     export let data: FrontmatterUrl | undefined;
 </script>
 
-{#if data?.url}
-    <A href={data.url}>{data.name}</A>
-{:else}
-    {data?.name || $t('projects.unknown')}
-{/if}
+<dd>
+    {#if data?.url}
+        <A href={data.url}>{data.name}</A>
+    {:else}
+        {data?.name || $t('projects.unknown')}
+    {/if}
+</dd>

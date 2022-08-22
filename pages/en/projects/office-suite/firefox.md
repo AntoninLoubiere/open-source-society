@@ -17,6 +17,7 @@ tags:
     - macos
     - office-suite
     - browser
+logo: static/assets/projects/firefox.svg
 ---
 
 # Firefox

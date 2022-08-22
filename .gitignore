@@ -11,3 +11,4 @@ src/routes/en
 src/routes/fr
 .~*#
 locales/*.json
+src/lib/assets/projects

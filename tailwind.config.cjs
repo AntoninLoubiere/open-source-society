@@ -20,11 +20,13 @@ module.exports = {
                 },
             },
             gridTemplateColumns: {
-                'page-layout': '1fr calc(65ch + 1rem) 1fr',
+                'page-layout-xl': '1fr minmax(60ch, 3fr) 1fr',
+                'page-layout-lg': 'minmax(60ch, 3fr) 1fr',
             },
             typography: {
                 DEFAULT: {
                     css: {
+                        maxWidth: '125ch',
                         a: null,
                     },
                 },

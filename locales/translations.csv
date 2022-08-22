@@ -1,12 +1,18 @@
 key,en,fr
 header.nav.projects,Projects,Projets
 hello,Hello!,Bonjour !
-projects.contributions,Contributions,Contributions
-projects.financial_support,Financial support,Support financier
-projects.issue_tracker,"Issue {nb, plural, one {tracker} other {trackers}}","{nb, plural, one {Traceur} other {Traceurs}} de bugs"
-projects.license,"{nb, plural, one {License} other {Licenses}}","{nb, plural, one {Licence} other {Licences}}"
-projects.maintainer,"{nb, plural, one {Maintainer} other {Maintainers}}","{nb, plural, one {Mainteneur} other {Mainteneurs}}"
-projects.repository,"{nb, plural, one {Repository} other {Repositories}}","{nb, plural, one {Dépôt} other {Dépôts}}"
-projects.unknown,Unknown,Inconnu
-projects.website,"Official {nb, plural, one {website} other {websites}}","{nb, plural, one {Site web officiel} other {Sites webs officiels}}"
+projects.dfn.contributions,The website where you can contribute and help this project.,Le site web où vous pouvez contribuer et aider ce projet.
+projects.dfn.financial_support,The website where you can donate to this project.,Le site web où vous pouvez donner de l’argent à ce projet.
+projects.dfn.issue_tracker,The website where bugs and feature request are posted.,Le site web où les bogues et les demandes de fonctionnalités sont postés.
+projects.dfn.license,It’s a legal instrument governing the use or redistribution of this project.,"Le contrat par lequel le titulaire des droits d'auteur définit les conditions dans lesquelles ce projet peut être utilisé, diffusé ou modifié. "
+projects.dfn.maintainer,The people who are developing and keeping this project running.,Les personnes qui développent et qui maintiennent ce projet.
+projects.dfn.repository,The website where the code of this project is available.,Le site web où le code de ce projet est disponible.
+projects.contributions,Contributions:,Contributions :
+projects.financial_support,Financial support:,Support financier :
 projects.information,Information:,Informations :
+projects.issue_tracker,"Issue {nb, plural, one {tracker} other {trackers}}:","{nb, plural, one {Traceur} other {Traceurs}} de bugs :"
+projects.license,"{nb, plural, one {License} other {Licenses}}:","{nb, plural, one {Licence} other {Licences}} :"
+projects.maintainer,"{nb, plural, one {Maintainer} other {Maintainers}}:","{nb, plural, one {Mainteneur} other {Mainteneurs}} :"
+projects.repository,"{nb, plural, one {Repository} other {Repositories}}:","{nb, plural, one {Dépôt} other {Dépôts}} :"
+projects.unknown,Unknown,Inconnu
+projects.website,"Official {nb, plural, one {website} other {websites}}:","{nb, plural, one {Site web officiel} other {Sites webs officiels}} :"

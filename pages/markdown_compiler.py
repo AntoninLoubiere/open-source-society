@@ -1,10 +1,25 @@
 from dataclasses import dataclass
 import json
 from pathlib import Path
+from random import randint
 import re
 import frontmatter
 import shutil
 from urllib.parse import urlparse
+
+
+class IdGenerator:
+
+    def __init__(self, length) -> None:
+        self.ids_generated = set()
+        self.length = length
+
+    def gen(self) -> str:
+        id = ""
+        while not id or id in self.ids_generated:
+            id = f"{randint(0, 16 ** self.length):x}"
+        self.ids_generated.add(id)
+        return id
 
 
 REFERENCE_LOCALE = "en"
@@ -23,20 +38,21 @@ FIELDS_URLS_OPTIONAL = [
     "financial_support",
 ]
 
-FIELDS_URLS_OPTIONAL_MULTIPLE_ITEM = ["financial_support"]
-
 # IMPORTANT: key should be in lowercase
 FIELDS_URL_MAPPER = {
     'license': {
         'mpl': 'https://www.mozilla.org/MPL/'
     }
 }
-FIELDS_TO_COPY = ["title", "tags", "layout"] + FIELDS_URLS_OPTIONAL
+FIELDS_TO_COPY = ["title", "tags", "layout", 'logo'] + FIELDS_URLS_OPTIONAL
 FIELDS_REQUIRED = set(["title", "summary"])
 
 AUTO_LAYOUT = {
     re.compile("projects/*"): "opensource-projects",
 }
+
+LOGO_ID_GENERATOR = IdGenerator(10)
+LOGO_OUTPUT_DIR = Path("src/lib/assets/projects/")
 
 
 def log(message, label="OK"):
@@ -107,13 +123,18 @@ def run(clean=True):
     if clean:
         for loc in LOCALES:
             shutil.rmtree(OUTPUT_PATH / loc, ignore_errors=True)
+        shutil.rmtree(LOGO_OUTPUT_DIR, ignore_errors=True)
+    LOGO_OUTPUT_DIR.mkdir(exist_ok=True)
 
     for id in pages:
         files = pages[id]
 
         ref_markdown_file = None
+        ref_logo_id = None
         if REFERENCE_LOCALE in files:
             ref_markdown_file = frontmatter.load(INPUT_PATH / files[REFERENCE_LOCALE])
+            ref_logo_id = copy_logo(ref_markdown_file)
+
         else:
             log(f'{id} is not translated in "{REFERENCE_LOCALE}"', "WARNING")
 
@@ -147,6 +168,14 @@ def run(clean=True):
                         f"{files[loc]} doesn't have the required field{'s' if len(missing_fields) != 1 else ''}: {', '.join(missing_fields)}",
                         "WARNING",
                     )
+
+                if 'logo' in markdown_file:
+                    if 'logo' in ref_markdown_file and ref_markdown_file['logo'] == markdown_file['logo']:
+                        logo_id = ref_logo_id
+                    else:
+                        logo_id = copy_logo(markdown_file)
+                    markdown_file['logo'] = logo_id
+
                 output_file.parent.mkdir(parents=True, exist_ok=True)
                 frontmatter.dump(markdown_file, output_file)
                 log(files[loc])
@@ -175,6 +204,14 @@ def run(clean=True):
             fiw,
         )
 
+
+def copy_logo(file):
+    if 'logo' in file:
+        filepath = Path(file['logo'])
+        id = LOGO_ID_GENERATOR.gen() + filepath.suffix
+        output_path = (LOGO_OUTPUT_DIR / id)
+        shutil.copy(filepath, output_path)
+        return id
 
 def get_url_field_data(input_data, field):
     if isinstance(input_data, str):
