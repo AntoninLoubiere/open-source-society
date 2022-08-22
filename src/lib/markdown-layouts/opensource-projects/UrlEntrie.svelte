@@ -8,7 +8,7 @@
     $: nb = Array.isArray(data) ? data.length : 1;
 </script>
 
-<div>
+<span class="block leading-5 py-1">
     {$t(`projects.${label}`, { values: { nb } })}:
     {#if Array.isArray(data)}
         <ul>
@@ -19,4 +19,4 @@
     {:else}
         <UrlEntrieData {data} />
     {/if}
-</div>
+</span>

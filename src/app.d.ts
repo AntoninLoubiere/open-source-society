@@ -13,3 +13,5 @@ interface FrontmatterUrl {
     url?: string;
 }
 type FrontmatterURLField = undefined | FrontmatterUrl | FrontmatterUrl[];
+
+type Locales = 'en' | 'fr';

@@ -1,10 +1,12 @@
 key,en,fr
+header.nav.projects,Projects,Projets
 hello,Hello!,Bonjour !
-projects.unknown,Unknown,Inconnu
-projects.maintainer,"{nb, plural, one {Maintainer} other {Maintainers}}","{nb, plural, one {Mainteneur} other {Mainteneurs}}"
-projects.website,"Official {nb, plural, one {website} other {websites}}","{nb, plural, one {Site web officiel} other {Sites webs officiels}}"
-projects.license,"{nb, plural, one {License} other {Licenses}}","{nb, plural, one {Licence} other {Licences}}"
-projects.repository,"{nb, plural, one {Repository} other {Repositories}}","{nb, plural, one {Dépôt} other {Dépôts}}"
-projects.issue_tracker,"Issue {nb, plural, one {tracker} other {trackers}}","{nb, plural, one {Traceur} other {Traceurs}} de bugs"
 projects.contributions,Contributions,Contributions
 projects.financial_support,Financial support,Support financier
+projects.issue_tracker,"Issue {nb, plural, one {tracker} other {trackers}}","{nb, plural, one {Traceur} other {Traceurs}} de bugs"
+projects.license,"{nb, plural, one {License} other {Licenses}}","{nb, plural, one {Licence} other {Licences}}"
+projects.maintainer,"{nb, plural, one {Maintainer} other {Maintainers}}","{nb, plural, one {Mainteneur} other {Mainteneurs}}"
+projects.repository,"{nb, plural, one {Repository} other {Repositories}}","{nb, plural, one {Dépôt} other {Dépôts}}"
+projects.unknown,Unknown,Inconnu
+projects.website,"Official {nb, plural, one {website} other {websites}}","{nb, plural, one {Site web officiel} other {Sites webs officiels}}"
+projects.information,Information:,Informations :

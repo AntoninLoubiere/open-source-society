@@ -26,10 +26,10 @@
     }
 </script>
 
-<div class="flex flex-wrap gap-1 items-center">
+<div class="flex flex-wrap items-center gap-1">
     {#each items as { label, href, id }}
         {@const isLastItem = id == items.length - 1}
-        <div class:text-gray-600={!isLastItem} class:text-primary={isLastItem}>
+        <div class:text-gray-600={!isLastItem} class:text-primary={isLastItem} class="inline-block">
             {#if startWithHome && id == 0}
                 <BreadcrumbItem {href}>
                     <svg

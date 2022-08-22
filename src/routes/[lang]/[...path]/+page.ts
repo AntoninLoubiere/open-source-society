@@ -1,11 +1,12 @@
+import { LOCALES, REF_LOC } from '$lib/localeConfig';
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
-
-const REF_LOC = 'en';
 
 export const load: PageLoad<{
     available_lang: string;
 }> = async ({ params: { lang, path } }) => {
+    if (!LOCALES.includes(lang)) throw error(404);
+
     const allIdsPromise: Promise<Record<string, string>> = import(`../../${REF_LOC}/ids.json`).then(
         (r) => r.default
     );

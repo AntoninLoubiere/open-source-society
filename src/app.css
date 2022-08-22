@@ -4,11 +4,7 @@
 
 @layer components {
     .link {
-        @apply text-primary;
-    }
-
-    .link:visited {
-        @apply text-primary-400;
+        @apply font-medium text-primary;
     }
 
     .link:hover {

@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "private": true,
     "scripts": {
-        "pre-build": "python pages/markdown_compiler.py",
+        "pre-build": "python pages/markdown_compiler.py && python tools/translations.py",
         "dev": "pnpm pre-build && vite dev",
         "build": "pnpm pre-build && vite build",
         "preview": "vite preview",
@@ -18,6 +18,7 @@
         "@playwright/test": "^1.25.0",
         "@sveltejs/adapter-auto": "next",
         "@sveltejs/kit": "next",
+        "@tailwindcss/typography": "^0.5.4",
         "@typescript-eslint/eslint-plugin": "^5.33.1",
         "@typescript-eslint/parser": "^5.33.1",
         "autoprefixer": "^10.4.8",
@@ -27,7 +28,6 @@
         "mdsvex": "^0.10.6",
         "postcss": "^8.4.16",
         "prettier": "^2.7.1",
-        "prettier-plugin-svelte": "^2.7.0",
         "svelte": "^3.49.0",
         "svelte-check": "^2.8.1",
         "svelte-preprocess": "^4.10.7",
@@ -38,6 +38,7 @@
     },
     "type": "module",
     "dependencies": {
+        "prettier-plugin-tailwindcss": "^0.1.13",
         "svelte-intl-precompile": "^0.12.0"
     }
 }
