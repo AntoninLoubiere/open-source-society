@@ -4,7 +4,7 @@
 
 <div class="h-10 print:hidden">
     <header
-        class="fixed top-0 left-0 right-0 flex h-10 items-center justify-between bg-white px-3 shadow-md"
+        class="fixed top-0 left-0 right-0 z-50 flex h-10 items-center justify-between bg-white px-3 shadow-md"
     >
         <div class="text-xl font-bold sm:w-52">
             <HeaderLink pathId="" activeExact={true}>

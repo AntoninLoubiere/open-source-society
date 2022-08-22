@@ -27,10 +27,10 @@
 </script>
 
 <BaseLayout {title} showTitle={true}>
-    <section slot="sidebar" let:isSide class:isSide>
+    <section slot="sidebar" let:isSide class:isSide class="relative">
         <h3 class="mt-0 mb-2">{$t('projects.information')}</h3>
         {#if logoUrl}
-            <figure class="mt-0 mb-1">
+            <figure class="mt-0 mb-1" class:is-inline={!isSide}>
                 <img alt="{title} logo." src={logoUrl} class="mx-auto max-h-[8rem] max-w-full" />
                 <figcaption>{title} logo.</figcaption>
             </figure>
@@ -50,7 +50,11 @@
 </BaseLayout>
 
 <style>
-    .isSide {
+    section.isSide {
         @apply sticky top-12 max-w-max rounded-lg border bg-white px-2 py-1;
+    }
+
+    figure.is-inline {
+        @apply absolute top-0 right-0 float-right max-w-[40vw];
     }
 </style>
