@@ -1,3 +1,5 @@
+const HEIGHT_HEADER = '2.5rem'; /* Update src/lib/config.ts too */
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ['./src/**/*.{html,js,svelte,ts}'],
@@ -30,6 +32,12 @@ module.exports = {
                         a: null,
                     },
                 },
+            },
+            spacing: {
+                'header-bar': HEIGHT_HEADER,
+            },
+            minHeight: {
+                'full-content': `calc(100vh - ${HEIGHT_HEADER})`,
             },
         },
     },

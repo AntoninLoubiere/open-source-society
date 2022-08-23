@@ -14,7 +14,7 @@
     <title>{titleHead}</title>
 </svelte:head>
 
-<div class="min-h-screen bg-primary-variant-50">
+<div class="min-h-full-content bg-primary-variant-50">
     <div class="grid gap-4 lg:grid-cols-page-layout-lg lg:p-4 xl:grid-cols-page-layout-xl">
         <div class="hidden xl:block" />
         <article

@@ -17,7 +17,7 @@
         for (let id = 0; id < paths.length; id++) {
             currentUrl += paths[id];
             items.push({
-                label: paths[id],
+                label: paths[id].replace('-', ' '),
                 href: currentUrl,
                 id,
             });

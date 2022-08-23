@@ -1,4 +1,4 @@
-import { LOCALES } from '$lib/localeConfig';
+import { LOCALES } from '$lib/config';
 import { redirect } from '@sveltejs/kit';
 import { getLocaleFromAcceptLanguageHeader } from 'svelte-intl-precompile';
 import type { PageServerLoad } from './$types';

@@ -1,7 +1,7 @@
 import type { LayoutLoad } from './$types';
 import { init, waitLocale } from 'svelte-intl-precompile';
 import { registerAll } from '$locales';
-import { REF_LOC } from '$lib/localeConfig';
+import { REF_LOC } from '$lib/config';
 
 registerAll();
 export const load: LayoutLoad = async ({ url }) => {

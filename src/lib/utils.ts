@@ -1,3 +1,4 @@
+import { browser } from '$app/env';
 import routes from '../routes/en/ids.json';
 
 export function isAppLink(pageUrl: URL, url: string) {
@@ -24,4 +25,12 @@ export function getLocaliseURL(pageUrl: string, locale: string) {
     }
 
     return '/' + locale;
+}
+
+export function convertRemToPixels(rem: string) {
+    if (rem.endsWith('rem')) rem = rem.slice(0, -3);
+    const remInt = Number(rem);
+    if (!browser) return remInt * 16;
+
+    return remInt * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }

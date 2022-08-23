@@ -51,7 +51,8 @@
 
 <style>
     section.isSide {
-        @apply sticky top-12 max-w-max rounded-lg border bg-white px-2 py-1;
+        @apply sticky top-12 max-w-max overflow-scroll rounded-lg border bg-white px-2 py-1;
+        max-height: calc(100vh - 4rem);
     }
 
     figure.is-inline {

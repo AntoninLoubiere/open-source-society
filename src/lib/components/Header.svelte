@@ -1,10 +1,30 @@
 <script lang="ts">
+    import { HEIGHT_HEADER } from '$lib/config';
+    import { convertRemToPixels } from '$lib/utils';
+
     import HeaderLink from './HeaderLink.svelte';
+
+    let height_pixel = convertRemToPixels(HEIGHT_HEADER);
+
+    let opened = true;
+
+    let last_scroll = 0;
+    function handle_scroll() {
+        const scroll = window.pageYOffset;
+        opened = scroll < height_pixel || scroll < last_scroll;
+
+        last_scroll = scroll;
+    }
+
+    $: console.log(opened);
 </script>
 
-<div class="h-10 print:hidden">
+<svelte:window on:scroll={handle_scroll} />
+
+<div class="h-header-bar print:hidden">
     <header
-        class="fixed top-0 left-0 right-0 z-50 flex h-10 items-center justify-between bg-white px-3 shadow-md"
+        class="fixed top-0 left-0 right-0 z-50 flex h-header-bar -translate-y-header-bar items-center justify-between bg-white px-3 shadow-md transition-transform"
+        class:opened
     >
         <div class="text-xl font-bold sm:w-52">
             <HeaderLink pathId="" activeExact={true}>
@@ -30,3 +50,9 @@
         <div class="flex justify-end sm:w-52" />
     </header>
 </div>
+
+<style>
+    .opened {
+        @apply transform-none;
+    }
+</style>

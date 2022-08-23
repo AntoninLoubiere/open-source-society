@@ -1,4 +1,4 @@
-import { LOCALES, REF_LOC } from '$lib/localeConfig';
+import { LOCALES, REF_LOC } from '$lib/config';
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
