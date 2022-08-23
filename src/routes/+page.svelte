@@ -6,7 +6,6 @@
 
     if (browser) {
         const locale = getLocaleFromNavigator()?.match(/([a-z]+)-?.*/)?.[1];
-        console.log(locale, `/${locale}`);
         if (locale) goto(`/${locale}`);
     }
 </script>

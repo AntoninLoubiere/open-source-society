@@ -11,6 +11,7 @@ declare namespace App {
 interface FrontmatterUrl {
     name: string;
     url?: string;
+    opensource?: boolean;
 }
 type FrontmatterURLField = undefined | FrontmatterUrl | FrontmatterUrl[];
 

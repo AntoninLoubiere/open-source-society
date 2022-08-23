@@ -36,6 +36,7 @@ FIELDS_URLS_OPTIONAL = [
     "issue_tracker",
     "contributions",
     "financial_support",
+    "alternatives"
 ]
 
 # IMPORTANT: key should be in lowercase
@@ -214,26 +215,31 @@ def copy_logo(file):
         return id
 
 def get_url_field_data(input_data, field):
+    response = {}
+    if field == 'alternatives':
+        response['opensource'] = False
+
     if isinstance(input_data, str):
         url = urlparse(input_data)
         if url.scheme:
-                        return {
+            response.update({
                 "name": f"{url.netloc}{url.path}",
                 "url": input_data,
-            }
+            })
         elif (
             field in FIELDS_URL_MAPPER
             and input_data.lower() in FIELDS_URL_MAPPER[field]
         ):
-            return {
+            response.update({
                 "name": input_data,
                 "url": FIELDS_URL_MAPPER[field][input_data.lower()],
-            }
+            })
         else:
-            return {
+            response.update({
                 "name": input_data,
-            }
+            })
     elif isinstance(input_data, dict):
+        response.update(input_data)
         if "name" in input_data:
             if (
                 "url" not in input_data
@@ -241,14 +247,16 @@ def get_url_field_data(input_data, field):
                 and input_data["name"].lower()
                 in FIELDS_URL_MAPPER[field]
             ):
-                input_data["url"] = FIELDS_URL_MAPPER[field][
+                response["url"] = FIELDS_URL_MAPPER[field][
                     input_data["name"].lower()
                 ]
         elif "url" in input_data:
-            input_data["name"] = input_data["url"]
+            url = urlparse(input_data['url'])
+            response["name"] = f"{url.netloc}{url.path}"
         return input_data
     elif isinstance(input_data, list):
         return [get_url_field_data(i, field) for i in input_data]
+    return response
 
 
 run()

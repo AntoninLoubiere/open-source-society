@@ -1,5 +1,11 @@
 ---
 title: Firefox
+alternatives:
+    - Edge
+    - Google Chrome
+    - Safari
+    - name: Chromium
+      opensource: true
 maintainer:
     name: Mozilla
     url: https://mozilla.org

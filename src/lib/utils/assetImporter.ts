@@ -3,11 +3,16 @@ export function importProjectLogo(name: string) {
     const ext = name.slice(extIndex);
     name = name.slice(0, extIndex);
 
-    switch (ext) {
-        case '.svg':
-            return import(`../assets/projects/${name}.svg`);
+    try {
+        switch (ext) {
+            case '.svg':
+                return import(`../assets/projects/${name}.svg`);
 
-        default:
-            throw `Unknown filename ${name}`;
+            default:
+                console.error(`Unknown filename ${name}`);
+        }
+    } catch (error) {
+        console.error(error);
     }
+    return '';
 }

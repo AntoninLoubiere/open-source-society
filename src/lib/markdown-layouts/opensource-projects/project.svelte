@@ -19,6 +19,7 @@
     export let contributions;
     export let financial_support;
     export let logo;
+    export let alternatives;
 
     let logoUrl;
     if (logo) {
@@ -39,10 +40,14 @@
             <UrlEntrie label="maintainer" data={maintainer} />
             <UrlEntrie label="website" data={website} />
             <UrlEntrie label="license" data={license} />
-            <UrlEntrie label="repository" data={repository} />
-            <UrlEntrie label="issue_tracker" data={issue_tracker} />
-            <UrlEntrie label="contributions" data={contributions} />
-            <UrlEntrie label="financial_support" data={financial_support} />
+            <details open={isSide} class:isSide class:is-inline={!isSide}>
+                <summary>{$t('projects.detailed-information')}</summary>
+                <UrlEntrie label="alternatives" data={alternatives} />
+                <UrlEntrie label="repository" data={repository} />
+                <UrlEntrie label="issue_tracker" data={issue_tracker} />
+                <UrlEntrie label="contributions" data={contributions} />
+                <UrlEntrie label="financial_support" data={financial_support} />
+            </details>
         </dl>
     </section>
 
@@ -56,6 +61,13 @@
     }
 
     figure.is-inline {
-        @apply absolute top-0 right-0 float-right max-w-[40vw];
+        @apply float-right max-w-[40vw];
+    }
+
+    details.isSide summary {
+        @apply hidden;
+    }
+    details.is-inline {
+        @apply my-3 rounded-lg border border-gray-400 px-2 py-1;
     }
 </style>

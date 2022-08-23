@@ -16,3 +16,9 @@ projects.maintainer,"{nb, plural, one {Maintainer} other {Maintainers}}:","{nb, 
 projects.repository,"{nb, plural, one {Repository} other {Repositories}}:","{nb, plural, one {Dépôt} other {Dépôts}} :"
 projects.unknown,Unknown,Inconnu
 projects.website,"Official {nb, plural, one {website} other {websites}}:","{nb, plural, one {Site web officiel} other {Sites webs officiels}} :"
+projects.alternatives,Alternatives:,Alternatives :
+projects.dfn.alternatives,Other projects that do the same thing as this project (they are rarely open source projects).,D’autres projects qui font la même chose que ce projet (ils sont rarement open source).
+projects.dfn.website,The official website of the project which host official informations.,Le site web officiel du projet qui héberge les informations officielles.
+projects.alternatives.opensource,This is an opensource project.,C’est un project open-source.
+projects.alternatives.not-opensource,This is not an opensource project. The source code will not be available.,Ce n’est pas un project open-source. Le code source ne seras pas disponible.
+projects.detailed-information,Detailed information,Informations détaillées

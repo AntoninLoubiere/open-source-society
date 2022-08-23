@@ -15,8 +15,6 @@
 
         last_scroll = scroll;
     }
-
-    $: console.log(opened);
 </script>
 
 <svelte:window on:scroll={handle_scroll} />
