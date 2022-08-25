@@ -9,5 +9,5 @@ export const load: PageServerLoad = async ({ request }) => {
         request.headers.get('accept-language'),
         LOCALES
     );
-    if (locale) throw redirect(307, `${base}/${locale}`);
+    if ((locale || '') in LOCALES) throw redirect(307, `${base}/${locale}`);
 };

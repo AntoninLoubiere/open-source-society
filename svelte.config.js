@@ -27,7 +27,7 @@ const config = {
         prerender: {
             crawl: true,
             default: true,
-            entries: ['/fr', '/en'],
+            entries: ['/', '/fr', '/en', '*'],
         },
         adapter: adapter({
             fallback: '404.html',

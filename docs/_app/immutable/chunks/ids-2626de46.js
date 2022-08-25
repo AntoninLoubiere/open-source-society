@@ -1,0 +1,1 @@
+const e={en:"en/projects",fr:"fr/projets"},r={"":{en:"en",fr:"fr"},"projects/office-suite/firefox":{fr:"fr/projets/bureautique/firefox"},"projects/office-suite":{en:"en/projects/office-suite",fr:"fr/projets/bureautique"},projects:e};export{r as default,e as projects};
