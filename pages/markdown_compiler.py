@@ -8,20 +8,6 @@ import shutil
 from urllib.parse import urlparse
 
 
-class IdGenerator:
-
-    def __init__(self, length) -> None:
-        self.ids_generated = set()
-        self.length = length
-
-    def gen(self) -> str:
-        id = ""
-        while not id or id in self.ids_generated:
-            id = f"{randint(0, 16 ** self.length):x}"
-        self.ids_generated.add(id)
-        return id
-
-
 REFERENCE_LOCALE = "en"
 LOCALES = ["en", "fr"]
 
@@ -35,7 +21,7 @@ FIELDS_URLS_OPTIONAL = [
     "repository",
     "issue_tracker",
     "contributions",
-    "financial_support",
+    "income",
     "alternatives"
 ]
 
@@ -52,7 +38,6 @@ AUTO_LAYOUT = {
     re.compile("projects/*"): "opensource-projects",
 }
 
-LOGO_ID_GENERATOR = IdGenerator(10)
 LOGO_OUTPUT_DIR = Path("src/lib/assets/projects/")
 
 
@@ -131,10 +116,10 @@ def run(clean=True):
         files = pages[id]
 
         ref_markdown_file = None
-        ref_logo_id = None
-        if REFERENCE_LOCALE in files:
-            ref_markdown_file = frontmatter.load(INPUT_PATH / files[REFERENCE_LOCALE])
-            ref_logo_id = copy_logo(ref_markdown_file)
+        ref_file_path = (INPUT_PATH / REFERENCE_LOCALE / id).with_suffix('.md')
+        print(ref_file_path)
+        if ref_file_path.exists():
+            ref_markdown_file = frontmatter.load(ref_file_path)
 
         else:
             log(f'{id} is not translated in "{REFERENCE_LOCALE}"', "WARNING")
@@ -170,13 +155,6 @@ def run(clean=True):
                         "WARNING",
                     )
 
-                if 'logo' in markdown_file:
-                    if 'logo' in ref_markdown_file and ref_markdown_file['logo'] == markdown_file['logo']:
-                        logo_id = ref_logo_id
-                    else:
-                        logo_id = copy_logo(markdown_file)
-                    markdown_file['logo'] = logo_id
-
                 output_file.parent.mkdir(parents=True, exist_ok=True)
                 frontmatter.dump(markdown_file, output_file)
                 log(files[loc])
@@ -204,15 +182,6 @@ def run(clean=True):
             },
             fiw,
         )
-
-
-def copy_logo(file):
-    if 'logo' in file:
-        filepath = Path(file['logo'])
-        id = LOGO_ID_GENERATOR.gen() + filepath.suffix
-        output_path = (LOGO_OUTPUT_DIR / id)
-        shutil.copy(filepath, output_path)
-        return id
 
 def get_url_field_data(input_data, field):
     response = {}
@@ -253,7 +222,6 @@ def get_url_field_data(input_data, field):
         elif "url" in input_data:
             url = urlparse(input_data['url'])
             response["name"] = f"{url.netloc}{url.path}"
-        return input_data
     elif isinstance(input_data, list):
         return [get_url_field_data(i, field) for i in input_data]
     return response

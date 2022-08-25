@@ -10,4 +10,8 @@
     .link:hover {
         @apply underline;
     }
+
+    details summary {
+        @apply cursor-pointer;
+    }
 }

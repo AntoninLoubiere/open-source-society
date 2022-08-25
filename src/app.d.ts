@@ -12,6 +12,7 @@ interface FrontmatterUrl {
     name: string;
     url?: string;
     opensource?: boolean;
+    paid?: boolean;
 }
 type FrontmatterURLField = undefined | FrontmatterUrl | FrontmatterUrl[];
 

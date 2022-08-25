@@ -2,7 +2,7 @@ const HEIGHT_HEADER = '2.5rem'; /* Update src/lib/config.ts too */
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./src/**/*.{html,js,svelte,ts}'],
+    content: ['./src/**/*.{html,js,svelte,ts}', './src/lib/components/tagColors.json'],
     theme: {
         extend: {
             colors: {

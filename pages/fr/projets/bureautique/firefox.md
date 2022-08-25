@@ -1,19 +1,53 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu metus consequat, dictum tortor a, varius tortor. Mauris sit amet lorem ipsum. Cras dui quam, malesuada ut finibus sed, molestie ac leo. Maecenas id mauris sed nisl finibus varius ut quis lorem. Suspendisse ut lacus varius, pellentesque dolor quis, sagittis erat. Sed ut consectetur ligula. Pellentesque euismod pulvinar metus, vel porttitor eros viverra ac. Aenean fermentum, metus mollis rhoncus bibendum, magna erat luctus dolor, et convallis erat nunc vel nibh. Phasellus congue finibus mi id auctor. Aenean ornare tortor id arcu eleifend, eu malesuada metus pulvinar. Aliquam dictum convallis odio ac luctus. Sed vitae tristique orci, sit amet dictum metus.
+---
+income:
+    - Partenariats
+    - name: Produits payants
+      url: https://mozilla.org/products/
+    - name: Donations
+      url: https://donate.mozilla.org
+---
 
-Sed a ultrices felis. Aenean enim ex, efficitur sed dui vitae, imperdiet viverra sapien. Curabitur vel libero condimentum, maximus elit ac, cursus nibh. Fusce sit amet mauris vitae lacus pretium tincidunt ac eu libero. Donec tincidunt libero et tortor vulputate posuere. Donec vehicula augue nec ligula tempor, vel faucibus urna hendrerit. In tempor sollicitudin mauris sit amet dictum. Cras eget quam leo. Etiam et mattis ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Firefox est un <span class="">navigateur web</span> (c'est à dire un logiciel permettant la lecture de pages webs) activement maintenu par la [Fondation Mozilla](https://mozilla.org/) depuis 2003 et par des milliers de bénévoles: le 24 août 2022 il y avait [3 693 contributeurs crédités](https://www.mozilla.org/credits/) (ayant contribué de manière significative). Firefox est disponible en 5 versions différentes:
 
-Aenean sagittis lobortis suscipit. Nullam vitae varius tortor. Nulla quis aliquam arcu, non rhoncus elit. Curabitur eget posuere felis. Nam quis risus erat. Vivamus non interdum sapien. Morbi lobortis fringilla tellus id tincidunt. Vestibulum at aliquet nunc. Morbi faucibus sodales rhoncus. Phasellus vitae augue viverra, ultricies felis sit amet, facilisis sapien. Cras pellentesque aliquam risus et viverra. Fusce eget cursus tortor. Mauris ultricies purus eget fermentum vestibulum. In fermentum pharetra hendrerit. Sed venenatis est mi.
+-   [Standard](https://www.mozilla.org/fr/firefox/new/) : stable, mises à jours tous les mois
+-   [Développeur](https://www.mozilla.org/fr/firefox/developer/) : stable, version mettant plus en avant les outils développement web
+-   [Beta](https://www.mozilla.org/fr/firefox/channel/desktop/#beta) : presque stable, mises à jours 3 fois par semaine
+-   [Nightly](https://www.mozilla.org/fr/firefox/channel/desktop/#nightly) : instable, mises à jours toutes les 12h
+-   [Entreprise](https://www.mozilla.org/fr/firefox/enterprise/) : mises jours toutes les 42 semaines, avec autant de mises à jours de sécurité que nécessaire
 
-Nulla facilisi. Mauris fringilla commodo laoreet. Donec fermentum et arcu in eleifend. Duis rhoncus vel libero in semper. Cras sem purus, accumsan id pharetra hendrerit, lobortis sit amet lorem. Vivamus non eleifend dolor, ac blandit orci. Quisque volutpat turpis purus, id porta mauris pharetra ac. Sed quis leo urna. Praesent aliquet condimentum pharetra. Duis sed interdum massa, at elementum turpis.
+Il existe aussi des versions communautaires comme [LibreWolf](https://librewolf.net/)
 
-Cras est nisl, luctus ut elit non, tempus volutpat magna. Duis sit amet erat mattis quam tincidunt mattis. Vivamus commodo a erat id porttitor. Morbi scelerisque leo at volutpat volutpat. Nunc ac nibh elit. Integer non interdum neque. Aenean vitae erat felis. Phasellus et diam leo. Nam consequat ut purus ac suscipit. Aliquam vulputate felis vitae accumsan posuere. Integer ut nisi quis nisl imperdiet vulputate.
+## Engament pour la vie privée
 
-Fusce pellentesque, odio in ultricies sollicitudin, dui quam maximus sem, lobortis rhoncus risus diam eu lectus. Phasellus a volutpat magna, sed lacinia leo. Vivamus ac congue leo. Vestibulum vel ultricies mauris. Curabitur tincidunt, lorem eget gravida ultricies, dolor ex tincidunt odio, at elementum nunc dolor pellentesque leo. Fusce sit amet ligula sed neque sollicitudin lobortis. Donec id nibh laoreet, congue justo in, interdum velit. Phasellus vel lacinia risus. Mauris ornare tortor diam, non dictum mi scelerisque lobortis. Integer at felis augue. Nullam placerat neque nec venenatis consectetur. Quisque elementum luctus leo nec facilisis. Curabitur mollis ipsum odio, nec molestie nisl laoreet sit amet. Phasellus ornare augue quis massa commodo, vel pretium magna elementum. Integer elementum posuere velit eget luctus.
+La fondation Mozilla œuvre pour la vie privée de leurs utilisateurs (dont les utilisateurs de Firefox) comme l'indique leur [manifeste](https://www.mozilla.org/fr/about/manifesto/). Par défaut Firefox collecte des données de télémétrie mais qui peuvent être désactivé dans les paramètres du logiciel.
 
-Morbi ut metus tincidunt magna sodales sagittis in vitae tortor. Sed orci metus, varius in viverra sit amet, dapibus quis nulla. Aenean sodales augue sed scelerisque vehicula. In elementum libero eget commodo porttitor. Aliquam at augue id risus cursus gravida. Pellentesque a sollicitudin leo. Mauris quam sem, semper sed aliquam in, tempus non urna. Vestibulum tempus lacinia lorem vel aliquet. Donec vitae diam accumsan, efficitur justo sit amet, ullamcorper nunc. Nam sed fringilla ipsum. Aliquam vestibulum, augue quis lobortis tristique, purus enim consectetur erat, in feugiat dui turpis quis nisl. In ut magna a mauris dapibus tincidunt.
+## Fonctionnalités
 
-Nullam vestibulum, tellus a hendrerit pretium, enim purus egestas eros, finibus euismod est leo ac ligula. Fusce iaculis magna vitae libero tincidunt ultrices. Vivamus dapibus vel felis at egestas. Aenean dignissim iaculis nulla, quis placerat magna facilisis sit amet. Morbi id ante vulputate odio vehicula vestibulum. Etiam sit amet neque sollicitudin, suscipit urna vitae, placerat magna. Cras tempus ex vel nisi bibendum, vitae fringilla velit ultrices. Nunc tincidunt nunc lectus, et mattis urna eleifend eget. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc mauris massa, blandit at gravida a, faucibus et est. Aliquam erat volutpat. In ultrices nulla quis eros venenatis, sollicitudin fermentum augue varius. Mauris ut luctus urna. Aenean sit amet auctor dolor, in consequat augue.
+Liste non exhaustive des différentes fonctionnalités de Firefox :
 
-Curabitur fermentum lacus sed iaculis porta. Nam egestas sollicitudin dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer nec mi sit amet ligula auctor commodo sed vitae metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam auctor sagittis rhoncus. Sed at ipsum at purus efficitur condimentum. Nullam dictum sed dolor ut fermentum. Sed dolor neque, dignissim quis efficitur et, pharetra vitae lacus. Vestibulum pretium, ante id auctor condimentum, quam purus pharetra ipsum, non laoreet metus augue ac arcu. In luctus consectetur orci at congue. Donec pharetra consectetur tellus sit amet vulputate. Proin non sagittis nunc.
+-   Bloqueur de fenêtre intruse (pop-ups)
+-   Navigation privée, navigation sans aucune sauvegarde intégré
+-   Blocage des cookies tiers (cookies utilisés pour la publicité ciblé)
+-   Téléchargement de fichiers
+-   Outils de développement
+-   Mode HTTPS forcé
+-   « DNS over HTTPS »
 
-Morbi dolor velit, tincidunt a nibh pretium, facilisis fermentum odio. Sed id interdum diam. Praesent euismod non est vel tempor. Etiam facilisis justo nunc, sit amet convallis nisl ultricies ac. Donec pretium sollicitudin vehicula. Nam euismod justo in fermentum pulvinar. Aenean scelerisque diam sed urna congue, quis mattis libero tincidunt. Nunc a leo convallis, interdum neque vel, sodales leo. Donec tristique quis diam dignissim egestas. Mauris rhoncus eros nec orci gravida, nec tempus erat rutrum. Nullam eu erat mauris. Aliquam nisl sem, vehicula ac maximus vitae, ultricies et metus. Aliquam non felis mattis, mollis lectus ut, blandit urna. Donec id sagittis odio. In ante erat, suscipit a enim ut, ullamcorper posuere neque.
+### Extensions
+
+Firefox permet d'augmenter ses fonctionnalités par l'utilisation d'extensions comme par exemple :
+
+-   [Facebook Container](https://addons.mozilla.org/fr/firefox/addon/facebook-container/): « Empêchez Facebook de vous suivre partout sur Internet. L'extension Facebook Container pour Firefox vous aide à reprendre le contrôle et à séparer votre activité sur le web de votre profil Facebook. » développé par Mozilla Firefox
+-   [Firefox Multi-Account Containers](https://addons.mozilla.org/fr/firefox/addon/multi-account-containers/): « Firefox Multi-Account Containers vous permet de séparer différentes parties de votre vie en ligne dans des onglets avec code couleur » développé par Mozilla Firefox
+
+Mais aussi des extensions pour améliorer la vie privée comme :
+
+-   [uBlock Origin](https://addons.mozilla.org/fr/firefox/addon/ublock-origin/) par Raymond Hill
+-   [AdBlock](https://addons.mozilla.org/fr/firefox/addon/adblock-for-firefox/) par AdBlock
+-   [Privacy Badger](https://addons.mozilla.org/fr/firefox/addon/privacy-badger17/) par [EFF](https://www.eff.org) Technologists
+
+## Plus d'informations
+
+-   [Page Wikipédia de Mozilla Firefox](https://fr.wikipedia.org/wiki/Mozilla_Firefox)
+-   [Site de Firefox](https://www.mozilla.org/fr/firefox/new)
+-   [Fondation Mozilla](https://www.mozilla.org/fr)

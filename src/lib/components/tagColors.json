@@ -1,0 +1,52 @@
+{
+    "app": {
+        "text": "text-pink-500",
+        "bg": "bg-pink-50",
+        "border": "border-pink-500"
+    },
+    "desktop": {
+        "text": "text-fuchsia-500",
+        "bg": "bg-fuchsia-50",
+        "border": "border-fuchsia-500"
+    },
+    "phone": {
+        "text": "text-fuchsia-500",
+        "bg": "bg-fuchsia-50",
+        "border": "border-fuchsia-500"
+    },
+    "linux": {
+        "text": "text-indigo-500",
+        "bg": "bg-indigo-50",
+        "border": "border-indigo-500"
+    },
+    "macos": {
+        "text": "text-indigo-500",
+        "bg": "bg-indigo-50",
+        "border": "border-indigo-500"
+    },
+    "windows": {
+        "text": "text-indigo-500",
+        "bg": "bg-indigo-50",
+        "border": "border-indigo-500"
+    },
+    "android": {
+        "text": "text-sky-500",
+        "bg": "bg-sky-50",
+        "border": "border-sky-500"
+    },
+    "ios": {
+        "text": "text-sky-500",
+        "bg": "bg-sky-50",
+        "border": "border-sky-500"
+    },
+    "office-suite": {
+        "text": "text-emerald-500",
+        "bg": "bg-emerald-50",
+        "border": "border-emerald-500"
+    },
+    "browser": {
+        "text": "text-amber-500",
+        "bg": "bg-amber-50",
+        "border": "border-amber-500"
+    }
+}

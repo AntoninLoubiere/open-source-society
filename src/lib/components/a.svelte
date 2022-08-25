@@ -1,14 +1,22 @@
 <script lang="ts">
     import { page } from '$app/stores';
-    import { isAppLink } from '$lib/utils';
+    import { getLocaliseURL, isAppLink } from '$lib/utils';
+    import { locale } from 'svelte-intl-precompile';
+
+    const INTERNAL_PROTO = 'internal:/';
 
     export let href: string;
+
+    $: isInternalLink = href.startsWith(INTERNAL_PROTO);
+    $: linkAddr = isInternalLink
+        ? getLocaliseURL(href.slice(INTERNAL_PROTO.length), $locale)
+        : href;
 </script>
 
-{#if isAppLink($page.url, href)}
-    <a {href} sveltekit:prefetch class="link"><slot /></a>
+{#if isInternalLink || isAppLink($page.url, linkAddr)}
+    <a href={linkAddr} sveltekit:prefetch class="link"><slot /></a>
 {:else}
-    <a {href} class="link external"><slot /></a>
+    <a href={linkAddr} class="link external"><slot /></a>
 {/if}
 
 <style>

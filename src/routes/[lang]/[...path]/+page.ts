@@ -3,13 +3,14 @@ import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad<{
-    available_lang: string;
+    available_lang: Record<string, string>;
+    backPath: string;
 }> = async ({ params: { lang, path } }) => {
     if (!LOCALES.includes(lang)) throw error(404);
 
-    const allIdsPromise: Promise<Record<string, string>> = import(`../../${REF_LOC}/ids.json`).then(
-        (r) => r.default
-    );
+    const allIdsPromise: Promise<Record<string, Record<string, string>>> = import(
+        `../../${REF_LOC}/ids.json`
+    ).then((r) => r.default);
 
     let resultPath: string | undefined;
     if (lang == REF_LOC) {
@@ -32,8 +33,15 @@ export const load: PageLoad<{
 
     const allIds = await allIdsPromise;
     if (resultPath in allIds) {
+        let backPath = resultPath;
+        while (backPath && !(backPath in allIds && lang in allIds[backPath])) {
+            const sep = backPath.lastIndexOf('/');
+            backPath = backPath.slice(0, sep);
+        }
+
         return {
             available_lang: allIds[resultPath],
+            backPath: allIds[backPath][lang],
         };
     }
 

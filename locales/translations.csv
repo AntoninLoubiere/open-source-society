@@ -1,24 +1,42 @@
 key,en,fr
 header.nav.projects,Projects,Projets
 hello,Hello!,Bonjour !
+projects.alternatives,"{nb, plural, one {Alternative} other {Alternatives}}","{nb, plural, one {Alternative} other {Alternatives}}"
+projects.alternatives.not-opensource,This is not an opensource project. The source code will not be available.,Ce n’est pas un project open-source. Le code source ne seras pas disponible.
+projects.alternatives.opensource,This is an opensource project.,C’est un project open-source.
+projects.contributions,Contributions,Contributions
+projects.detailed-information,Detailed information,Informations détaillées
+projects.dfn.alternatives,Other projects that do the same thing as this project (they are rarely open source projects).,D’autres projects qui font la même chose que ce projet (ils sont rarement open source).
 projects.dfn.contributions,The website where you can contribute and help this project.,Le site web où vous pouvez contribuer et aider ce projet.
-projects.dfn.financial_support,The website where you can donate to this project.,Le site web où vous pouvez donner de l’argent à ce projet.
+projects.dfn.income,How this project get funds.,La manière dont le projet reçoit des fonds.
 projects.dfn.issue_tracker,The website where bugs and feature request are posted.,Le site web où les bogues et les demandes de fonctionnalités sont postés.
 projects.dfn.license,It’s a legal instrument governing the use or redistribution of this project.,"Le contrat par lequel le titulaire des droits d'auteur définit les conditions dans lesquelles ce projet peut être utilisé, diffusé ou modifié. "
 projects.dfn.maintainer,The people who are developing and keeping this project running.,Les personnes qui développent et qui maintiennent ce projet.
 projects.dfn.repository,The website where the code of this project is available.,Le site web où le code de ce projet est disponible.
-projects.contributions,Contributions:,Contributions :
-projects.financial_support,Financial support:,Support financier :
-projects.information,Information:,Informations :
-projects.issue_tracker,"Issue {nb, plural, one {tracker} other {trackers}}:","{nb, plural, one {Traceur} other {Traceurs}} de bugs :"
-projects.license,"{nb, plural, one {License} other {Licenses}}:","{nb, plural, one {Licence} other {Licences}} :"
-projects.maintainer,"{nb, plural, one {Maintainer} other {Maintainers}}:","{nb, plural, one {Mainteneur} other {Mainteneurs}} :"
-projects.repository,"{nb, plural, one {Repository} other {Repositories}}:","{nb, plural, one {Dépôt} other {Dépôts}} :"
-projects.unknown,Unknown,Inconnu
-projects.website,"Official {nb, plural, one {website} other {websites}}:","{nb, plural, one {Site web officiel} other {Sites webs officiels}} :"
-projects.alternatives,Alternatives:,Alternatives :
-projects.dfn.alternatives,Other projects that do the same thing as this project (they are rarely open source projects).,D’autres projects qui font la même chose que ce projet (ils sont rarement open source).
 projects.dfn.website,The official website of the project which host official informations.,Le site web officiel du projet qui héberge les informations officielles.
-projects.alternatives.opensource,This is an opensource project.,C’est un project open-source.
-projects.alternatives.not-opensource,This is not an opensource project. The source code will not be available.,Ce n’est pas un project open-source. Le code source ne seras pas disponible.
-projects.detailed-information,Detailed information,Informations détaillées
+projects.income,Income source,Source de revenu
+projects.information,Information,Informations
+projects.issue_tracker,"Issue {nb, plural, one {tracker} other {trackers}}","{nb, plural, one {Traceur} other {Traceurs}} de bugs"
+projects.license,"{nb, plural, one {License} other {Licenses}}","{nb, plural, one {Licence} other {Licences}}"
+projects.maintainer,"{nb, plural, one {Maintainer} other {Maintainers}}","{nb, plural, one {Mainteneur} other {Mainteneurs}}"
+projects.repository,"{nb, plural, one {Repository} other {Repositories}}","{nb, plural, one {Dépôt} other {Dépôts}}"
+projects.unknown,Unknown,Inconnu
+projects.website,"Official {nb, plural, one {website} other {websites}}","{nb, plural, one {Site web officiel} other {Sites webs officiels}}"
+projects.alternatives.paid,This is a paid product.,C’est un produit payant.
+projects.not-found.page.title,Not found,Non trouvé
+projects.not-found.title,"Sorry, this page doesn’t exist in {lang}","Désolé, cette page n’existe pas en {lang}"
+projects.not-found.body.exists,This page doesn’t exist yet in {lang} but this page exist in:,Cette page n’existe pas encore en {lang} mais elle existe en :
+lang.en,English,Anglais
+lang.fr,French,Français
+projects.not-found.body,We didn’t find this page.,Nous n’avons pas trouvé cette page.
+tag.app,Application,Application
+tag.desktop,Desktop,Bureau
+tag.windows,Windows,Windows
+tag.linux,Linux,Linux
+tag.macos,Mac OS,Mac OS
+tag.office-suite,Office Suite,Bureautique
+tag.browser,Browser,Navigateur
+tag.phone,Phone,Portable
+tag.android,Android,Android
+tag.ios,iOS,iOS
+back,Back,Retour
