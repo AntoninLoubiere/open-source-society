@@ -11,6 +11,7 @@
     import BaseLayout from '../BaseLayout.svelte';
     import { t } from 'svelte-intl-precompile';
     import { ASSETS } from '$lib/config';
+import { base } from '$app/paths';
 
     /** @type {string} */
     export let title;
@@ -44,7 +45,7 @@
     <section slot="sidebar" let:isSide class:isSide class="relative">
         <h3 class="mt-0 mb-2">{$t('projects.information')}</h3>
         <figure class="mt-0 mb-1" class:is-inline={!isSide}>
-            <img alt="{title} logo." src={ASSETS + logo} class="mx-auto max-h-[8rem] max-w-full" />
+            <img alt="{title} logo." src={base + ASSETS + logo} class="mx-auto max-h-[8rem] max-w-full" />
             <figcaption class="text-center">{title} logo.</figcaption>
         </figure>
         <dl>

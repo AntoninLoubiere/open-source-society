@@ -2,6 +2,7 @@
     import { browser } from '$app/env';
 
     import { goto } from '$app/navigation';
+import { base } from '$app/paths';
     import { getLocaleFromNavigator } from 'svelte-intl-precompile';
 
     if (browser) {
@@ -12,6 +13,6 @@
 
 Available locales:
 <ul>
-    <li><a sveltekit:prefetch href="/en">English</a></li>
-    <li><a sveltekit:prefetch href="/fr">Français</a></li>
+    <li><a sveltekit:prefetch href="{base}/en">English</a></li>
+    <li><a sveltekit:prefetch href="{base}/fr">Français</a></li>
 </ul>

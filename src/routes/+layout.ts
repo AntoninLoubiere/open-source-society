@@ -3,6 +3,7 @@ import { init, locale, waitLocale } from 'svelte-intl-precompile';
 import { registerAll } from '$locales';
 import { REF_LOC } from '$lib/config';
 import { get } from 'svelte/store';
+import { base } from '$app/paths';
 
 registerAll();
 
@@ -19,5 +20,6 @@ export const load: LayoutLoad = async ({ url }) => {
 };
 
 export function getLocaleFromUrl(url: URL) {
-    return /^\/([a-zA-Z]+)\/?/.exec(url.pathname)?.[1];
+    const pathname = url.pathname.startsWith(base) ? url.pathname.slice(base.length) : url.pathname;
+    return /^\/([a-zA-Z]+)\/?/.exec(pathname)?.[1];
 }

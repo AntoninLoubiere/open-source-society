@@ -3,7 +3,7 @@
 
     export let tag: string;
 
-    import tagColors from "./tagColors.json"
+    import tagColors from './tagColors.json';
 
     $: color = (tagColors as Record<string, Record<string, string>>)[tag] || tagColors.app;
 </script>

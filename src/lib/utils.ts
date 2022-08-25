@@ -1,4 +1,5 @@
 import { browser } from '$app/env';
+import { base } from '$app/paths';
 import routes from '../routes/en/ids.json';
 
 export function isAppLink(pageUrl: URL, url: string) {
@@ -10,7 +11,7 @@ export function getLocaliseURL(pageUrl: string, locale: string) {
 
     if (pageUrl in routes) {
         const trans = (routes as Record<string, Record<string, string>>)[pageUrl];
-        if (locale in trans) return '/' + trans[locale];
+        if (locale in trans) return base + '/' + trans[locale];
     }
 
     const sep = pageUrl.lastIndexOf('/');
@@ -19,12 +20,12 @@ export function getLocaliseURL(pageUrl: string, locale: string) {
         if (basePath in routes) {
             const trans = (routes as Record<string, Record<string, string>>)[basePath];
             if (locale in trans) {
-                return '/' + trans[locale] + pageUrl.slice(sep);
+                return base + '/' + trans[locale] + pageUrl.slice(sep);
             }
         }
     }
 
-    return '/' + locale;
+    return base + '/' + locale;
 }
 
 export function convertRemToPixels(rem: string) {

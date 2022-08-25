@@ -1,4 +1,6 @@
 <script lang="ts">
+import { base } from '$app/paths';
+
     import { page } from '$app/stores';
     import { getLocaliseURL, isAppLink } from '$lib/utils';
     import { locale } from 'svelte-intl-precompile';

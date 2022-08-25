@@ -3,7 +3,7 @@
 
     import Header from '$lib/components/Header.svelte';
     import { REF_LOC } from '$lib/config';
-    import { locale, setCurrentLocale } from 'svelte-intl-precompile';
+    import { locale } from 'svelte-intl-precompile';
     import '../app.css';
     import { getLocaleFromUrl } from './+layout';
 

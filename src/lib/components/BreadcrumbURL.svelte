@@ -1,8 +1,9 @@
 <script lang="ts">
+    import { base } from '$app/paths';
+
     import BreadcrumbItem from './BreadcrumbItem.svelte';
 
     export let url: string;
-    export let base = '/';
     export let startWithHome = true;
 
     interface Item {
@@ -12,8 +13,8 @@
     }
     let items: Item[] = [];
     $: {
-        const paths = url.split('/');
-        let currentUrl = base;
+        const paths = url.slice(base.length - 1).split('/');
+        let currentUrl = '';
         for (let id = 0; id < paths.length; id++) {
             currentUrl += paths[id];
             items.push({

@@ -2,7 +2,6 @@
 title: Firefox
 alternatives:
     - name: Chromium
-      url: internal:/projects/office-suite/chromium
       opensource: true
     - Edge
     - Google Chrome

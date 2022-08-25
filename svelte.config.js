@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 
@@ -26,10 +26,19 @@ const config = {
     kit: {
         prerender: {
             crawl: true,
+            default: true,
+            entries: ['/fr', '/en'],
         },
-        adapter: adapter(),
+        adapter: adapter({
+            fallback: '404.html',
+            pages: 'docs',
+            assets: 'docs',
+        }),
         alias: {
             'src/*': 'app/src',
+        },
+        paths: {
+            base: '/opensourcesociety',
         },
     },
     vitePlugin: {
