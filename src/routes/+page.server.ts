@@ -1,3 +1,4 @@
+import { base } from '$app/paths';
 import { LOCALES } from '$lib/config';
 import { redirect } from '@sveltejs/kit';
 import { getLocaleFromAcceptLanguageHeader } from 'svelte-intl-precompile';
@@ -8,5 +9,5 @@ export const load: PageServerLoad = async ({ request }) => {
         request.headers.get('accept-language'),
         LOCALES
     );
-    if (locale) throw redirect(307, `/${locale}`);
+    if (locale) throw redirect(307, `${base}/${locale}`);
 };
