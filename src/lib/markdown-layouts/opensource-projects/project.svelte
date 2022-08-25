@@ -37,9 +37,7 @@
     export let tags;
 </script>
 
-<BaseLayout {title}>
-    <h1 class="!mb-2">{title}</h1>
-
+<BaseLayout {title} showTitle={true}>
     <Tags {tags} />
 
     <section slot="sidebar" let:isSide class:isSide class="relative">

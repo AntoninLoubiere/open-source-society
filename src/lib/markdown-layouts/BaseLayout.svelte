@@ -2,6 +2,7 @@
     import { page } from '$app/stores';
 
     export let title: string;
+    export let showTitle = false;
 
     $: titleHead = title ? title + ' - Open Source Society' : 'Open Source Society';
 
@@ -23,6 +24,9 @@
                 <BreadcrumbUrl url={$page.url.pathname.slice(1)} />
             </nav>
             <div class="markdown">
+                {#if showTitle}
+                    <h1>{title}</h1>
+                {/if}
                 <div class="not-prose border-y border-gray-400 lg:hidden">
                     <slot name="sidebar" />
                 </div>
