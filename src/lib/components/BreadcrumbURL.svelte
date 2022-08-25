@@ -14,7 +14,7 @@
     let items: Item[] = [];
     $: {
         const paths = url.slice(base.length).split('/');
-        let currentUrl = '';
+        let currentUrl = '/';
         for (let id = 0; id < paths.length; id++) {
             currentUrl += paths[id];
             items.push({

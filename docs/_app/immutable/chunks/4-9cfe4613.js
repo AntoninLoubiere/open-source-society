@@ -1,1 +1,0 @@
-import{default as c}from"../components/pages/en/_page.md-de43b6b1.js";import"./paths-971ee920.js";import"./default-8707e3a9.js";import"./BaseLayout-41857435.js";import"./stores-392876ab.js";import"./singletons-fca6f76e.js";import"./utils-38382a4f.js";import"./ids-8b24376e.js";import"./locale-b86b8e40.js";export{c as component};
