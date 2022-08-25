@@ -1,0 +1,1 @@
+import{default as c}from"../components/pages/en/projects/office-suite/_page.md-1c8c3e15.js";import"./paths-971ee920.js";import"./directory-7b3ba969.js";import"./BaseLayout-41857435.js";import"./stores-392876ab.js";import"./singletons-fca6f76e.js";import"./utils-38382a4f.js";import"./ids-8b24376e.js";import"./locale-b86b8e40.js";export{c as component};

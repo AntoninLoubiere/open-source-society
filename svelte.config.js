@@ -38,7 +38,7 @@ const config = {
             'src/*': 'app/src',
         },
         paths: {
-            base: '/opensourcesociety',
+            base: '/open-source-society',
         },
     },
     vitePlugin: {

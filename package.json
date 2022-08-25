@@ -16,12 +16,12 @@
         "make-colors": "python tools/generate-tags-color-list.py"
     },
     "devDependencies": {
-        "@playwright/test": "^1.25.0",
+        "@playwright/test": "^1.25.1",
         "@sveltejs/adapter-auto": "next",
         "@sveltejs/kit": "next",
         "@tailwindcss/typography": "^0.5.4",
-        "@typescript-eslint/eslint-plugin": "^5.33.1",
-        "@typescript-eslint/parser": "^5.33.1",
+        "@typescript-eslint/eslint-plugin": "^5.35.1",
+        "@typescript-eslint/parser": "^5.35.1",
         "autoprefixer": "^10.4.8",
         "eslint": "^8.22.0",
         "eslint-config-prettier": "^8.5.0",
