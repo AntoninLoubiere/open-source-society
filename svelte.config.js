@@ -26,7 +26,6 @@ const config = {
     kit: {
         prerender: {
             crawl: true,
-            default: true,
             entries: ['/', '/fr', '/en', '*'],
         },
         adapter: adapter({

@@ -28,7 +28,7 @@
                     <h1>{title}</h1>
                 {/if}
                 <div class="not-prose border-y border-gray-400 lg:hidden">
-                    <slot name="sidebar" />
+                    <slot name="sidebar" isSide={false}/>
                 </div>
                 <slot />
             </div>

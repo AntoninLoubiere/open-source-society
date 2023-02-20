@@ -5,10 +5,10 @@
     import { REF_LOC } from '$lib/config';
     import { locale } from 'svelte-intl-precompile';
     import '../app.css';
-    import { getLocaleFromUrl } from './+layout';
+    import { _getLocaleFromUrl } from './+layout';
 
     beforeNavigate(({ to }) => {
-        if (to) $locale = getLocaleFromUrl(to) || REF_LOC;
+        if (to?.url) $locale = _getLocaleFromUrl(to.url) || REF_LOC;
     });
 </script>
 

@@ -16,7 +16,7 @@
 </script>
 
 {#if isInternalLink || isAppLink($page.url, linkAddr)}
-    <a href={linkAddr} sveltekit:prefetch class="link"><slot /></a>
+    <a href={linkAddr} data-sveltekit-preload-code="viewport" data-sveltekit-preload-data="hover" class="link"><slot /></a>
 {:else}
     <a href={linkAddr} class="link external"><slot /></a>
 {/if}

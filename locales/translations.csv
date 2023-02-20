@@ -1,9 +1,13 @@
 key,en,fr
+back,Back,Retour
 header.nav.projects,Projects,Projets
 hello,Hello!,Bonjour !
+lang.en,English,Anglais
+lang.fr,French,Français
 projects.alternatives,"{nb, plural, one {Alternative} other {Alternatives}}","{nb, plural, one {Alternative} other {Alternatives}}"
 projects.alternatives.not-opensource,This is not an opensource project. The source code will not be available.,Ce n’est pas un project open-source. Le code source ne seras pas disponible.
 projects.alternatives.opensource,This is an opensource project.,C’est un project open-source.
+projects.alternatives.paid,This is a paid product.,C’est un produit payant.
 projects.contributions,Contributions,Contributions
 projects.detailed-information,Detailed information,Informations détaillées
 projects.dfn.alternatives,Other projects that do the same thing as this project (they are rarely open source projects).,D’autres projects qui font la même chose que ce projet (ils sont rarement open source).
@@ -19,24 +23,20 @@ projects.information,Information,Informations
 projects.issue_tracker,"Issue {nb, plural, one {tracker} other {trackers}}","{nb, plural, one {Traceur} other {Traceurs}} de bugs"
 projects.license,"{nb, plural, one {License} other {Licenses}}","{nb, plural, one {Licence} other {Licences}}"
 projects.maintainer,"{nb, plural, one {Maintainer} other {Maintainers}}","{nb, plural, one {Mainteneur} other {Mainteneurs}}"
+projects.not-found.body,We didn’t find this page.,Nous n’avons pas trouvé cette page.
+projects.not-found.body.exists,This page doesn’t exist yet in {lang} but this page exist in:,Cette page n’existe pas encore en {lang} mais elle existe en :
+projects.not-found.page.title,Not found,Non trouvé
+projects.not-found.title,"Sorry, this page doesn’t exist in {lang}","Désolé, cette page n’existe pas en {lang}"
 projects.repository,"{nb, plural, one {Repository} other {Repositories}}","{nb, plural, one {Dépôt} other {Dépôts}}"
 projects.unknown,Unknown,Inconnu
 projects.website,"Official {nb, plural, one {website} other {websites}}","{nb, plural, one {Site web officiel} other {Sites webs officiels}}"
-projects.alternatives.paid,This is a paid product.,C’est un produit payant.
-projects.not-found.page.title,Not found,Non trouvé
-projects.not-found.title,"Sorry, this page doesn’t exist in {lang}","Désolé, cette page n’existe pas en {lang}"
-projects.not-found.body.exists,This page doesn’t exist yet in {lang} but this page exist in:,Cette page n’existe pas encore en {lang} mais elle existe en :
-lang.en,English,Anglais
-lang.fr,French,Français
-projects.not-found.body,We didn’t find this page.,Nous n’avons pas trouvé cette page.
+tag.android,Android,Android
 tag.app,Application,Application
+tag.browser,Browser,Navigateur
 tag.desktop,Desktop,Bureau
-tag.windows,Windows,Windows
+tag.ios,iOS,iOS
 tag.linux,Linux,Linux
 tag.macos,Mac OS,Mac OS
 tag.office-suite,Office Suite,Bureautique
-tag.browser,Browser,Navigateur
 tag.phone,Phone,Portable
-tag.android,Android,Android
-tag.ios,iOS,iOS
-back,Back,Retour
+tag.windows,Windows,Windows

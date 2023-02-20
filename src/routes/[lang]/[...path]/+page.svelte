@@ -6,6 +6,7 @@
     import A from '$lib/components/a.svelte';
 
     import BaseLayout from '$lib/markdown-layouts/BaseLayout.svelte';
+    import langsTranslator from '$lib/locale/language-local.json'
     import { t } from 'svelte-intl-precompile';
 
     export let data: { available_lang: Record<string, string>; backPath: string };
@@ -19,9 +20,10 @@
         values: { lang },
     })}
     {#if langs.length}
-        <ul>
-            {#each langs as lang}
-                <li><A href="{base}/{data.available_lang[lang]}">{$t(`lang.${lang}`)}</A></li>
+    <ul>
+        {#each langs as lang}
+                {@const t = langsTranslator[lang]}
+                <li><A href="{base}/{data.available_lang[lang]}">{t.f} {t.n}</A></li>
             {/each}
         </ul>
     {/if}

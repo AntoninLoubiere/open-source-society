@@ -4,12 +4,13 @@ import { registerAll } from '$locales';
 import { REF_LOC } from '$lib/config';
 import { get } from 'svelte/store';
 import { base } from '$app/paths';
+import { browser } from '$app/environment';
 
 registerAll();
 
 export const load: LayoutLoad = async ({ url }) => {
-    const loc = getLocaleFromUrl(url);
-    if (!get(locale)) {
+    const loc = _getLocaleFromUrl(url);
+    if (!get(locale) || !browser) {
         init({
             initialLocale: loc,
             fallbackLocale: REF_LOC,
@@ -19,7 +20,7 @@ export const load: LayoutLoad = async ({ url }) => {
     return {};
 };
 
-export function getLocaleFromUrl(url: URL) {
+export function _getLocaleFromUrl(url: URL) {
     const pathname = url.pathname.startsWith(base) ? url.pathname.slice(base.length) : url.pathname;
     return /^\/([a-zA-Z]+)\/?/.exec(pathname)?.[1];
 }

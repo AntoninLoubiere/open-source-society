@@ -11,7 +11,7 @@
 
     $: href = getLocaliseURL(pathId, $locale);
     // let active = false;
-    $: active = activeExact ? $page.url.pathname == href : $page.url.pathname.startsWith(href);
+    $: active = activeExact ? $page.url.pathname == href : $page.url?.pathname.startsWith(href);
 </script>
 
 <a {href} class:active class="hover:text-secondary hover:underline"

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { browser } from '$app/env';
+    import { browser } from '$app/environment';
 
     import { goto } from '$app/navigation';
     import { base } from '$app/paths';
@@ -13,6 +13,6 @@
 
 Available locales:
 <ul>
-    <li><a sveltekit:prefetch href="{base}/en">English</a></li>
-    <li><a sveltekit:prefetch href="{base}/fr">Français</a></li>
+    <li><a data-sveltekit-preload-code="viewport" data-sveltekit-preload-data="hover" href="{base}/en">English</a></li>
+    <li><a data-sveltekit-preload-code="viewport" data-sveltekit-preload-data="hover" href="{base}/fr">Français</a></li>
 </ul>

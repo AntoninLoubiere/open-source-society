@@ -1,4 +1,4 @@
-import { browser } from '$app/env';
+import { browser } from '$app/environment';
 import { base } from '$app/paths';
 import routes from '../routes/en/ids.json';
 
