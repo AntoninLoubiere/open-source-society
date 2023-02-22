@@ -6,7 +6,6 @@
 <script>
     import Tags from '../../components/Tags.svelte';
 
-    // @ts-nocheck
     import UrlEntrie from './UrlEntrie.svelte';
     import BaseLayout from '../BaseLayout.svelte';
     import { t } from 'svelte-intl-precompile';
@@ -15,6 +14,10 @@
 
     /** @type {string} */
     export let title;
+    /** @type {string} */
+    export let edit_url;
+    /** @type {string} */
+    export let last_modification;
     /** @type {FrontmatterURLField} */
     export let maintainer;
     /** @type {FrontmatterURLField} */
@@ -35,11 +38,9 @@
     export let alternatives;
     /** @type {string[] | undefined} */
     export let tags;
-
-
 </script>
 
-<BaseLayout {title} showTitle={true}>
+<BaseLayout {title} {edit_url} {last_modification} showTitle={true}>
     <Tags {tags} />
 
     <section slot="sidebar" let:isSide class:isSide class="relative">

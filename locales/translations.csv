@@ -8,6 +8,8 @@ projects.alternatives,"{nb, plural, one {Alternative} other {Alternatives}}","{n
 projects.alternatives.not-opensource,This is not an opensource project. The source code will not be available.,Ce n’est pas un project open-source. Le code source ne seras pas disponible.
 projects.alternatives.opensource,This is an opensource project.,C’est un project open-source.
 projects.alternatives.paid,This is a paid product.,C’est un produit payant.
+projects.button.edit-github,View and edit this page on GitHub,Voir et modifier cette page sur GitHub
+projects.button.edit-github-title,Edit this page,Modifier cette page
 projects.contributions,Contributions,Contributions
 projects.detailed-information,Detailed information,Informations détaillées
 projects.dfn.alternatives,Other projects that do the same thing as this project (they are rarely open source projects).,D’autres projects qui font la même chose que ce projet (ils sont rarement open source).
@@ -40,3 +42,4 @@ tag.macos,Mac OS,Mac OS
 tag.office-suite,Office Suite,Bureautique
 tag.phone,Phone,Portable
 tag.windows,Windows,Windows
+projects.last_modification,"Last modified {lastModificationDate, date, datetime}","Dernière modification {lastModificationDate, date, datetime}"

@@ -1,23 +1,27 @@
 <script lang="ts">
-    import { HEIGHT_HEADER } from '$lib/config';
+    import { HEIGHT_HEADER, MAX_HEIGHT_HIDE_ON_SCROLL } from '$lib/config';
     import { convertRemToPixels } from '$lib/utils';
 
     import HeaderLink from './HeaderLink.svelte';
 
     let height_pixel = convertRemToPixels(HEIGHT_HEADER);
+    let innerHeight: number = 0;
 
     let opened = true;
 
     let last_scroll = 0;
     function handle_scroll() {
         const scroll = window.pageYOffset;
-        opened = scroll < height_pixel || scroll < last_scroll;
+        opened =
+            innerHeight >= MAX_HEIGHT_HIDE_ON_SCROLL ||
+            scroll < height_pixel ||
+            scroll < last_scroll;
 
         last_scroll = scroll;
     }
 </script>
 
-<svelte:window on:scroll={handle_scroll} />
+<svelte:window bind:innerHeight on:scroll={handle_scroll} />
 
 <div class="h-header-bar print:hidden">
     <header

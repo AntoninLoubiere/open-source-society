@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 from random import randint
 import re
+import subprocess
 import frontmatter
 import shutil
 from urllib.parse import urlparse
@@ -13,6 +14,9 @@ LOCALES = ["en", "fr"]
 
 INPUT_PATH = Path("pages")
 OUTPUT_PATH = Path("src") / "routes"
+
+EDIT_URL = "https://github.com/AntoninLoubiere/open-source-society/edit/main/pages/{path}"
+GIT_DATE_COMMAND = ["git", "log", "-1", "--pretty=%cI", "path"]
 
 FIELDS_URLS_OPTIONAL = [
     "maintainer",
@@ -39,6 +43,12 @@ AUTO_LAYOUT = {
 }
 
 LOGO_OUTPUT_DIR = Path("src/lib/assets/projects/")
+
+
+def get_last_modification_date(path):
+    GIT_DATE_COMMAND[-1] = path
+    r = subprocess.run(GIT_DATE_COMMAND, capture_output=True, text=True).stdout.strip()
+    return r
 
 
 def log(message, label="OK"):
@@ -133,6 +143,8 @@ def run(clean=True):
             if markdown_file.content.strip():
                 markdown_file["_"] = "FILE AUTOMATICALLY GENERATED, DO NOT EDIT"
                 markdown_file["id"] = id
+                markdown_file["edit_url"] = EDIT_URL.format(path=files[loc])
+                markdown_file["last_modification"] = get_last_modification_date(input_file.as_posix())
 
                 if loc != REFERENCE_LOCALE and ref_markdown_file is not None:
                     for field in FIELDS_TO_COPY:

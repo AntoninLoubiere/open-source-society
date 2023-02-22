@@ -13,6 +13,18 @@
 
 Available locales:
 <ul>
-    <li><a data-sveltekit-preload-code="viewport" data-sveltekit-preload-data="hover" href="{base}/en">English</a></li>
-    <li><a data-sveltekit-preload-code="viewport" data-sveltekit-preload-data="hover" href="{base}/fr">Français</a></li>
+    <li>
+        <a
+            data-sveltekit-preload-code="viewport"
+            data-sveltekit-preload-data="hover"
+            href="{base}/en">English</a
+        >
+    </li>
+    <li>
+        <a
+            data-sveltekit-preload-code="viewport"
+            data-sveltekit-preload-data="hover"
+            href="{base}/fr">Français</a
+        >
+    </li>
 </ul>

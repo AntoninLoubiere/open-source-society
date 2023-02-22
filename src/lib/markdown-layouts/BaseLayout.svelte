@@ -1,13 +1,18 @@
 <script lang="ts">
     import { page } from '$app/stores';
+    import { t } from 'svelte-intl-precompile';
 
     export let title: string;
     export let showTitle = false;
+    export let last_modification: string = '';
+    $: lastModificationDate = new Date(last_modification);
+    export let edit_url: string = '';
 
     $: titleHead = title ? title + ' - Open Source Society' : 'Open Source Society';
 
     import BreadcrumbUrl from '$lib/components/BreadcrumbURL.svelte';
     import './markdown.css';
+    import GithubEditButton from './_GithubEditButton.svelte';
 </script>
 
 <svelte:head>
@@ -28,9 +33,20 @@
                     <h1>{title}</h1>
                 {/if}
                 <div class="not-prose border-y border-gray-400 lg:hidden">
-                    <slot name="sidebar" isSide={false}/>
+                    <slot name="sidebar" isSide={false} />
                 </div>
                 <slot />
+                {#if last_modification || edit_url}
+                    <hr class="!mt-8 !mb-4 !border-gray-400" />
+                    <footer class="flex flex-wrap justify-between gap-2">
+                        {#if edit_url}
+                            <GithubEditButton url={edit_url} />
+                        {/if}
+                        {#if last_modification}
+                            {$t('projects.last_modification', { values: { lastModificationDate } })}
+                        {/if}
+                    </footer>
+                {/if}
             </div>
         </article>
         <div class="prose hidden lg:block">

@@ -1,1 +1,0 @@
-import{g as i,l}from"../../chunks/_layout-92c9f52a.js";import"../../chunks/config-2d8fbf06.js";import"../../chunks/paths-971ee920.js";import"../../chunks/locale-b86b8e40.js";import"../../chunks/preload-helper-aa6bc0ce.js";export{i as getLocaleFromUrl,l as load};
