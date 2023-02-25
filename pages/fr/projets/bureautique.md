@@ -8,3 +8,4 @@ title: Bureautique
 ### Navigateurs
 
 -   [Firefox](bureautique/firefox)
+-   [Chromium](bureautique/chromium)

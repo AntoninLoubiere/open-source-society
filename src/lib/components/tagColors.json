@@ -1,4 +1,29 @@
 {
+    "project": {
+        "text": "text-rose-500",
+        "bg": "bg-rose-50",
+        "border": "border-rose-500"
+    },
+    "actor": {
+        "text": "text-rose-500",
+        "bg": "bg-rose-50",
+        "border": "border-rose-500"
+    },
+    "license": {
+        "text": "text-rose-500",
+        "bg": "bg-rose-50",
+        "border": "border-rose-500"
+    },
+    "fondation": {
+        "text": "text-pink-500",
+        "bg": "bg-pink-50",
+        "border": "border-pink-500"
+    },
+    "private-company": {
+        "text": "text-pink-500",
+        "bg": "bg-pink-50",
+        "border": "border-pink-500"
+    },
     "app": {
         "text": "text-pink-500",
         "bg": "bg-pink-50",

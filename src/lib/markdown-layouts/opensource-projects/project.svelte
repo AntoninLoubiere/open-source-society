@@ -44,7 +44,6 @@
     <Tags {tags} />
 
     <section slot="sidebar" let:isSide class:isSide class="relative">
-        <h3 class="mt-0 mb-2">{$t('projects.information')}</h3>
         <figure class="mt-0 mb-1" class:is-inline={!isSide}>
             <img
                 alt="{title} logo."

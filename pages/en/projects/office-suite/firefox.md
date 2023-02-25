@@ -2,13 +2,14 @@
 title: Firefox
 alternatives:
     - name: Chromium
+      url: internal://projects/office-suite/chromium
       opensource: true
     - Edge
     - Google Chrome
     - Safari
 maintainer:
     name: Mozilla
-    url: https://mozilla.org
+    url: internal://actors/mozilla
 website: https://www.mozilla.org/firefox/new
 license: MPL
 issue_tracker: https://bugzilla.mozilla.org
@@ -21,6 +22,7 @@ income:
       url: https://donate.mozilla.org
 repository: https://hg.mozilla.org
 tags:
+    - project
     - app
     - desktop
     - phone

@@ -1,5 +1,6 @@
 ---
-layout: opensource-projects-dir
+title: Office Suite
+layout: projects-dir
 ---
 
 # Office Suite
@@ -7,3 +8,4 @@ layout: opensource-projects-dir
 ### Browsers
 
 -   [Firefox](office-suite/firefox)
+-   [Chromium](office-suite/chromium)

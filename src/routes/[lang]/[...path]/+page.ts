@@ -17,9 +17,8 @@ export const load: PageLoad<{
         resultPath = path;
     } else {
         const langIds: Record<string, string> = (await import(`../../${lang}/ids.json`)).default;
-
         if (path in langIds) {
-            resultPath = path;
+            resultPath = langIds[path];
         } else {
             const sep = path.lastIndexOf('/');
             if (sep < 0) throw error(404);

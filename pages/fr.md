@@ -8,6 +8,8 @@ id: ''
 Ce site promeut l'open source.
 Il est encore dans une phase de développement et est en cours de construction.
 
-# Projets Open Source
+# Ressources
 
-[Projets open sources](fr/projets).
+-   [Acteurs](fr/acteurs)
+-   [Licence](fr/licence)
+-   [Projets open sources](fr/projets)

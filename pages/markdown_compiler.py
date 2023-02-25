@@ -15,6 +15,7 @@ LOCALES = ["en", "fr"]
 INPUT_PATH = Path("pages")
 OUTPUT_PATH = Path("src") / "routes"
 
+# Repeated in config.ts
 EDIT_URL = "https://github.com/AntoninLoubiere/open-source-society/edit/main/pages/{path}"
 GIT_DATE_COMMAND = ["git", "log", "-1", "--pretty=%cI", "path"]
 
@@ -32,14 +33,18 @@ FIELDS_URLS_OPTIONAL = [
 # IMPORTANT: key should be in lowercase
 FIELDS_URL_MAPPER = {
     'license': {
-        'mpl': 'https://www.mozilla.org/MPL/'
+        'mpl': 'internal://license/MPL'
     }
 }
 FIELDS_TO_COPY = ["title", "tags", "layout", 'logo'] + FIELDS_URLS_OPTIONAL
-FIELDS_REQUIRED = set(["title", "summary"])
+FIELDS_REQUIRED = set([
+    "title",
+    # "summary"
+])
 
 AUTO_LAYOUT = {
-    re.compile("projects/*"): "opensource-projects",
+    re.compile("projects/*"): "projects",
+    re.compile("actors/*"): "actor",
 }
 
 LOGO_OUTPUT_DIR = Path("src/lib/assets/projects/")

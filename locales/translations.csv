@@ -23,6 +23,7 @@ projects.dfn.website,The official website of the project which host official inf
 projects.income,Income source,Source de revenu
 projects.information,Information,Informations
 projects.issue_tracker,"Issue {nb, plural, one {tracker} other {trackers}}","{nb, plural, one {Traceur} other {Traceurs}} de bugs"
+projects.last_modification,"Last modified {lastModificationDate, date, datetime}","Dernière modification {lastModificationDate, date, datetime}"
 projects.license,"{nb, plural, one {License} other {Licenses}}","{nb, plural, one {Licence} other {Licences}}"
 projects.maintainer,"{nb, plural, one {Maintainer} other {Maintainers}}","{nb, plural, one {Mainteneur} other {Mainteneurs}}"
 projects.not-found.body,We didn’t find this page.,Nous n’avons pas trouvé cette page.
@@ -32,14 +33,18 @@ projects.not-found.title,"Sorry, this page doesn’t exist in {lang}","Désolé,
 projects.repository,"{nb, plural, one {Repository} other {Repositories}}","{nb, plural, one {Dépôt} other {Dépôts}}"
 projects.unknown,Unknown,Inconnu
 projects.website,"Official {nb, plural, one {website} other {websites}}","{nb, plural, one {Site web officiel} other {Sites webs officiels}}"
+tag.actor,Actor,Acteur
 tag.android,Android,Android
 tag.app,Application,Application
 tag.browser,Browser,Navigateur
 tag.desktop,Desktop,Bureau
+tag.fondation,Fondation,Fondation
 tag.ios,iOS,iOS
+tag.license,License,Licence
 tag.linux,Linux,Linux
 tag.macos,Mac OS,Mac OS
 tag.office-suite,Office Suite,Bureautique
 tag.phone,Phone,Portable
+tag.private-company,Private company,Entreprise privée
 tag.windows,Windows,Windows
-projects.last_modification,"Last modified {lastModificationDate, date, datetime}","Dernière modification {lastModificationDate, date, datetime}"
+tag.project,Project,Projet

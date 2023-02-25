@@ -1,7 +1,7 @@
 ---
 title: Projects
 summary: The list of projects
-layout: opensource-projects-dir
+layout: projects-dir
 ---
 
 # Open Source Projects

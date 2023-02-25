@@ -1,20 +1,23 @@
 <script lang="ts">
+    import type { PageData } from './$types';
+    import { t, locale } from 'svelte-intl-precompile';
     import { base } from '$app/paths';
-
     import { page } from '$app/stores';
-
+    import { EDIT_URL_BASE } from '$lib/config';
     import A from '$lib/components/a.svelte';
-
     import BaseLayout from '$lib/markdown-layouts/BaseLayout.svelte';
     import langsTranslator from '$lib/locale/language-local.json';
-    import { t } from 'svelte-intl-precompile';
 
-    export let data: { available_lang: Record<string, string>; backPath: string };
+    export let data: PageData;
     $: langs = Object.keys(data.available_lang);
     $: lang = $t(`lang.${$page.params.lang}`).toLocaleLowerCase();
+
+    $: currentPage = EDIT_URL_BASE + $page.params.lang + '/' + $page.params.path + '.md';
+
+    $: formatter = new Intl.DisplayNames($locale, { type: 'language' });
 </script>
 
-<BaseLayout title={$t('projects.not-found.page.title')}>
+<BaseLayout title={$t('projects.not-found.page.title')} edit_url={currentPage}>
     <h1>{$t('projects.not-found.title', { values: { lang } })}</h1>
     {$t(langs.length ? 'projects.not-found.body.exists' : 'projects.not-found.body', {
         values: { lang },
@@ -22,8 +25,8 @@
     {#if langs.length}
         <ul>
             {#each langs as lang}
-                {@const t = langsTranslator[lang]}
-                <li><A href="{base}/{data.available_lang[lang]}">{t.f} {t.n}</A></li>
+                {@const d = langsTranslator[lang]}
+                <li><A href="{base}/{data.available_lang[lang]}">{d.f} {formatter.of(lang)}</A></li>
             {/each}
         </ul>
     {/if}

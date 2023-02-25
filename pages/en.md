@@ -7,6 +7,8 @@ title: ''
 This is a website that promote open source.
 It is in a development phase and all the site is work in progress.
 
-# Open Source Projects
+# Resources :
 
-[Open source projects](en/projects).
+-   [Actors](en/actors)
+-   [Licenses](en/license)
+-   [Open source projects](en/projects)
