@@ -2,7 +2,7 @@ const HEIGHT_HEADER = '2.5rem'; /* Update src/lib/config.ts too */
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./src/**/*.{html,js,svelte,ts}', './src/lib/components/tagColors.json'],
+    content: ['./src/**/*.{html,js,svelte,ts}', './src/lib/tags/tag-colors-class.txt'],
     theme: {
         extend: {
             colors: {
@@ -22,8 +22,8 @@ module.exports = {
                 },
             },
             gridTemplateColumns: {
-                'page-layout-xl': '1fr minmax(60ch, 3fr) 1fr',
-                'page-layout-lg': 'minmax(60ch, 3fr) 1fr',
+                'page-layout-xl': '1fr minmax(60ch, 4fr) 1fr',
+                'page-layout-lg': 'minmax(60ch, 4fr) 1fr',
             },
             typography: {
                 DEFAULT: {

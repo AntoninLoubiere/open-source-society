@@ -1,11 +1,12 @@
 ---
 id: office-suite
 title: Bureautique
+import:
+    - PageCardList
 ---
 
 # Bureautique
 
 ### Navigateurs
 
--   [Firefox](bureautique/firefox)
--   [Chromium](bureautique/chromium)
+<PageCardList pagesIds={['fr/projets/bureautique/firefox', 'fr/projets/bureautique/chromium']} />

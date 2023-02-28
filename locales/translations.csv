@@ -37,7 +37,7 @@ tag.actor,Actor,Acteur
 tag.android,Android,Android
 tag.app,Application,Application
 tag.browser,Browser,Navigateur
-tag.desktop,Desktop,Bureau
+tag.desktop,Desktop,Ordinateur
 tag.fondation,Fondation,Fondation
 tag.ios,iOS,iOS
 tag.license,License,Licence
@@ -48,3 +48,53 @@ tag.phone,Phone,Portable
 tag.private-company,Private company,Entreprise privée
 tag.windows,Windows,Windows
 tag.project,Project,Projet
+tag.actors,Actors,Acteurs
+tag.androids,Android,Android
+tag.apps,Applications,Applications
+tag.browsers,Browsers,Navigateurs
+tag.desktops,Desktop,Ordinateur
+tag.fondations,Fondations,Fondations
+tag.ioss,iOS,iOS
+tag.licenses,Licenses,Licences
+tag.linuxs,Linux,Linux
+tag.macoss,Mac OS,Mac OS
+tag.office-suites,Office Suite,Bureautique
+tag.phones,Phone,Portable
+tag.private-companys,Private companies,Entreprise privées
+tag.windowss,Windows,Windows
+tag.projects,Projects,Projets
+tag.description.actor,"An actor (fondation, private company…) of the open-source.","Un acteur (fondation, entreprise privée) de l’open-source."
+tag.description.android,A project that is available on Android.,Un projet qui est disponible sur Android.
+tag.description.app,An application.,Une application.
+tag.description.browser,A browser.,Un navigateur.
+tag.description.desktop,A project which is available on desktop.,Un projet qui est disponible sur ordinateur.
+tag.description.fondation,An actor which is a fondation.,Un acteur qui est une fondation.
+tag.description.ios,A project that is available on iOS.,A project that is available on iOS.
+tag.description.license,A license of open-source projects.,Une licence de projets open-source.
+tag.description.linux,A project which is available on Linux.,Un projet qui est disponible sur Linux.
+tag.description.macos,A project which is available on MacOS.,Un projet qui est disponible sur MacOS.
+tag.description.office-suite,An office-suite project.,Un projet de bureautique.
+tag.description.phone,A project which is available on phone.,Un projet qui est disponible sur un portable.
+tag.description.private-company,An actor which is a private company.,Un acteur qui est une entreprise privée.
+tag.description.project,An open-source project.,Un projet open-source.
+tags,Tags,Étiquettes
+tag.description.actors,"The actors (fondations, private companies…) of the open-source.","Les acteurs (fondations, entreprise privées) de l’open-source."
+tag.description.androids,the projects which are available on Android.,Les projets qui sont disponibles sur Android.
+tag.description.apps,The projects which are applications.,Les projets qui sont des applications.
+tag.description.browsers,Browsers.,Les navigateurs.
+tag.description.desktops,The projects which are available on desktop.,Les projets qui sont disponibles sur ordinateur.
+tag.description.fondations,The actors which are fondations.,Les acteurs qui sont des fondations.
+tag.description.ioss,The projects which are available on iOS.,Les projets qui sont disponibles sur iOS.
+tag.description.licenses,The licences of open-source projects.,Les licences des projets open-source.
+tag.description.linuxs,The projects which are available on Linux.,Les projets qui sont disponibles sur Linux.
+tag.description.macoss,The projects which are available on MacOS.,Les projets qui sont disponibles sur MacOS.
+tag.description.office-suites,The open-suites projects.,Les projets de bureautique.
+tag.description.phones,The projects which are available on phone.,Les projets qui sont disponibles sur portable.
+tag.description.private-companys,The actors which are private companies.,Les acteurs qui sont des entreprises privées.
+tag.description.projects,The open-source projects.,Les projets open-source.
+tags.list-description,The list of tags :,La liste des étiquettes :
+tag.description.windows,A project which is available on Windows.,Un projet qui est disponible sur Windows.
+tag.description.windowss,The projects which are available on Windows.,Les projets qui sont disponibles sur Windows.
+header.nav.tags,Tags,Étiquettes
+header.nav.actors,Actors,Acteurs
+header.nav.license,Licenses,Licences

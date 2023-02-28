@@ -6,9 +6,15 @@ node_modules
 .env
 .env.*
 !.env.example
+__pycache__
 
-src/routes/en
-src/routes/fr
 .~*#
-locales/*.json
-src/lib/assets/projects
+
+# Build artifacts :
+/src/routes/en
+/src/routes/fr
+/locales/*.json
+/src/lib/assets/projects
+/src/lib/tags/tags.json
+/src/lib/tags/tag-colors-class.txt
+/src/lib/tags/tagColors.json

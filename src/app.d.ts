@@ -17,3 +17,13 @@ interface FrontmatterUrl {
 type FrontmatterURLField = undefined | FrontmatterUrl | FrontmatterUrl[];
 
 type Locales = 'en' | 'fr';
+
+type PageMetadata = {
+    id: string;
+    title: string;
+    7;
+    summary: string;
+    logo: string;
+    tags?: string[];
+    missing?: boolean;
+};

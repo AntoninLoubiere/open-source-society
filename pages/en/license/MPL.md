@@ -1,3 +1,5 @@
 ---
 title: MPL
+tags:
+    - license
 ---

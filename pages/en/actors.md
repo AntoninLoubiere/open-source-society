@@ -2,14 +2,16 @@
 title: Actors
 summary: The list of the actors of the OpenSource
 layout: projects-dir
+import:
+    - PageCardList
 ---
 
 # Actors
 
 ## Fondations :
 
--   [Mozilla](actors/mozilla)
+<PageCardList pagesIds={['en/actors/mozilla']} />
 
-# Private companies
+## Private companies
 
--   [Google](actors/google)
+<PageCardList pagesIds={['en/actors/mozilla', 'en/actors/google']} />

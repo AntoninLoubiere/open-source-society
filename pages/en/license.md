@@ -1,8 +1,10 @@
 ---
 title: License
 layout: projects-dir
+import:
+    - PageCardList
 ---
 
 # License
 
--   [MPL](license/MPL)
+<PageCardList pagesIds={['en/license/MPL']} />

@@ -7,7 +7,7 @@ income:
       url: https://donate.mozilla.org
 ---
 
-Firefox est un <span class="">navigateur web</span> (c'est à dire un logiciel permettant la lecture de pages webs) activement maintenu par la [Fondation Mozilla](https://mozilla.org/) depuis 2003 et par des milliers de bénévoles: le 24 août 2022 il y avait [3 693 contributeurs crédités](https://www.mozilla.org/credits/) (ayant contribué de manière significative). Firefox est disponible en 5 versions différentes:
+Firefox est un <span class="">navigateur web</span> (c'est à dire un logiciel permettant la lecture de pages webs) activement maintenu par la [Fondation Mozilla](internal://actors/mozilla) depuis 2003 et par des milliers de bénévoles: le 24 août 2022 il y avait [3 693 contributeurs crédités](https://www.mozilla.org/credits/) (ayant contribué de manière significative). Firefox est disponible en 5 versions différentes:
 
 -   [Standard](https://www.mozilla.org/fr/firefox/new/) : stable, mises à jours tous les mois
 -   [Développeur](https://www.mozilla.org/fr/firefox/developer/) : stable, version mettant plus en avant les outils développement web

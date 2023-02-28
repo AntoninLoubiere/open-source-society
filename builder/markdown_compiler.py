@@ -10,16 +10,17 @@ from urllib.parse import urlparse
 
 
 REFERENCE_LOCALE = "en"
-LOCALES = ["en", "fr"]
+LOCALES = {"en", "fr"}
 
 INPUT_PATH = Path("pages")
 OUTPUT_PATH = Path("src") / "routes"
+OUTPUT_TAGS_LIST = Path("src") / "lib" / "tags"  / "tags.json"
 
 # Repeated in config.ts
 EDIT_URL = "https://github.com/AntoninLoubiere/open-source-society/edit/main/pages/{path}"
 GIT_DATE_COMMAND = ["git", "log", "-1", "--pretty=%cI", "path"]
 
-FIELDS_URLS_OPTIONAL = [
+FIELDS_URLS_OPTIONAL = {
     "maintainer",
     "website",
     "license",
@@ -28,7 +29,7 @@ FIELDS_URLS_OPTIONAL = [
     "contributions",
     "income",
     "alternatives"
-]
+}
 
 # IMPORTANT: key should be in lowercase
 FIELDS_URL_MAPPER = {
@@ -36,11 +37,11 @@ FIELDS_URL_MAPPER = {
         'mpl': 'internal://license/MPL'
     }
 }
-FIELDS_TO_COPY = ["title", "tags", "layout", 'logo'] + FIELDS_URLS_OPTIONAL
-FIELDS_REQUIRED = set([
+FIELDS_TO_COPY = {"title", "tags", "layout", 'logo'} | FIELDS_URLS_OPTIONAL
+FIELDS_REQUIRED = {
     "title",
     # "summary"
-])
+}
 
 AUTO_LAYOUT = {
     re.compile("projects/*"): "projects",
@@ -50,6 +51,16 @@ AUTO_LAYOUT = {
 LOGO_OUTPUT_DIR = Path("src/lib/assets/projects/")
 
 
+METADATA_EXPORT = {"title", "summary", "logo", "id", "tags"}
+
+def get_import_line(components: list[str]):
+    line = "<script>"
+    for c in components:
+        line += f"import {c[c.rfind('/') + 1:]} from \"$lib/components/{c}.svelte\";"
+    line += "</script>"
+    return line
+
+
 def get_last_modification_date(path):
     GIT_DATE_COMMAND[-1] = path
     r = subprocess.run(GIT_DATE_COMMAND, capture_output=True, text=True).stdout.strip()
@@ -57,7 +68,7 @@ def get_last_modification_date(path):
 
 
 def log(message, label="OK"):
-    print(f"{label:^10}: {message}")
+    print(f"[MDC] {label:^10}: {message}")
 
 
 def load_files():
@@ -86,10 +97,7 @@ def load_files():
             pages[file_id] = {}
 
         relative_filepath = file.relative_to(INPUT_PATH)
-        if markdown_file.content.strip():
-            pages[file_id][locale] = relative_filepath
-        else:
-            log(relative_filepath, "SKIPPED")
+        pages[file_id][locale] = relative_filepath
 
         if current_id is None:
             path_to_id[locale][""] = file_id
@@ -120,37 +128,67 @@ def load_files():
 
 def run(clean=True):
     pages, path_to_id, all_ids = load_files()
+    skipped = set()
+    tags: dict[str, dict[str, list[str]]] = {}
 
     if clean:
         for loc in LOCALES:
             shutil.rmtree(OUTPUT_PATH / loc, ignore_errors=True)
         shutil.rmtree(LOGO_OUTPUT_DIR, ignore_errors=True)
+
     LOGO_OUTPUT_DIR.mkdir(exist_ok=True)
 
+    # Writes Pages
     for id in pages:
         files = pages[id]
 
         ref_markdown_file = None
         ref_file_path = (INPUT_PATH / REFERENCE_LOCALE / id).with_suffix('.md')
-        print(ref_file_path)
+        print(id)
         if ref_file_path.exists():
             ref_markdown_file = frontmatter.load(ref_file_path)
-
+            current_tags = ref_markdown_file.get("tags", [])
+            metadata_ref_keys = METADATA_EXPORT & ref_markdown_file.keys()
+            metadata_ref = {
+                k: ref_markdown_file[k] for k in metadata_ref_keys
+            }
         else:
+            metadata_ref_keys = set()
+            metadata_ref = {}
+            current_tags = []
             log(f'{id} is not translated in "{REFERENCE_LOCALE}"', "WARNING")
+
+        for t in current_tags:
+            if t not in tags:
+                tags[t] = {l: [] for l in LOCALES}
+
+        files_set = set(files)
+        if files_set != LOCALES:
+            log(f"Missing some translations, {id}", "WARNING")
+            for loc in LOCALES - files_set:
+                files[loc] = get_fake_file(loc, id, pages)
+
 
         for loc in files:
             input_file = INPUT_PATH / files[loc]
             output_file = (OUTPUT_PATH / files[loc]).with_suffix("") / "+page.md"
+            output_file.parent.mkdir(parents=True, exist_ok=True)
 
-            markdown_file = frontmatter.load(input_file)
+            if input_file.exists():
+                markdown_file = frontmatter.load(input_file)
+            else:
+                markdown_file = {}
+            markdown_file["_"] = "FILE AUTOMATICALLY GENERATED, DO NOT EDIT"
+            markdown_file["id"] = id
+            markdown_file["edit_url"] = EDIT_URL.format(path=files[loc])
+            markdown_file["last_modification"] = get_last_modification_date(input_file.as_posix())
 
-            if markdown_file.content.strip():
-                markdown_file["_"] = "FILE AUTOMATICALLY GENERATED, DO NOT EDIT"
-                markdown_file["id"] = id
-                markdown_file["edit_url"] = EDIT_URL.format(path=files[loc])
-                markdown_file["last_modification"] = get_last_modification_date(input_file.as_posix())
+            metadata = {k: markdown_file.get(k, metadata_ref.get(k, None)) for k in metadata_ref_keys | (METADATA_EXPORT & markdown_file.keys())}
 
+            for t in current_tags:
+                tags[t][loc].append(files[loc].with_suffix('').as_posix())
+
+            if not isinstance(markdown_file, dict) and markdown_file.content.strip():
                 if loc != REFERENCE_LOCALE and ref_markdown_file is not None:
                     for field in FIELDS_TO_COPY:
                         if field in ref_markdown_file and field not in markdown_file:
@@ -165,18 +203,42 @@ def run(clean=True):
                         if reg.match(id):
                             markdown_file["layout"] = lay
 
+                if 'import' in markdown_file:
+                    markdown_file.content += get_import_line(markdown_file['import'])
+                    del markdown_file['import']
+
                 if not FIELDS_REQUIRED.issubset(markdown_file.keys()):
-                    missing_fields = FIELDS_REQUIRED.difference(markdown_file.keys())
+                    missing_fields = FIELDS_REQUIRED - markdown_file.keys()
                     log(
                         f"{files[loc]} doesn't have the required field{'s' if len(missing_fields) != 1 else ''}: {', '.join(missing_fields)}",
                         "WARNING",
                     )
 
-                output_file.parent.mkdir(parents=True, exist_ok=True)
                 frontmatter.dump(markdown_file, output_file)
                 log(files[loc])
             else:
-                print(files[loc], "SKIPPED")
+                metadata['missing'] = True
+                skipped.add(files[loc])
+                log(files[loc], "SKIPPED")
+
+            with open(output_file.with_name('metadata.json'), 'w') as fiw:
+                json.dump(metadata, fiw)
+
+    # Write Ids
+    file = OUTPUT_PATH / "en" / "ids.json"
+    file.parent.mkdir(parents=True, exist_ok=True)
+    with open(file, "w") as fiw:
+        json.dump(
+            {
+                id: {
+                    loc: path.with_suffix("").as_posix()
+                    for loc, path in pages[id].items() if path not in skipped
+                }
+                for id in all_ids
+            },
+            fiw,
+        )
+
 
     for loc in LOCALES:
         if loc != REFERENCE_LOCALE:
@@ -186,19 +248,20 @@ def run(clean=True):
             with open(file, "w") as fiw:
                 json.dump(pti, fiw)
 
-    file = OUTPUT_PATH / "en" / "ids.json"
-    file.parent.mkdir(parents=True, exist_ok=True)
-    with open(file, "w") as fiw:
-        json.dump(
-            {
-                id: {
-                    loc: path.with_suffix("").as_posix()
-                    for loc, path in pages[id].items()
-                }
-                for id in all_ids
-            },
-            fiw,
-        )
+    # Write Tags
+
+    for loc in LOCALES:
+        dir = OUTPUT_PATH / loc / 'tags'
+        dir.mkdir(exist_ok=True)
+
+    for t in tags:
+        for loc in tags[t]:
+            dir = OUTPUT_PATH / loc / 'tags'
+            with open((dir / t).with_suffix('.json'), 'w') as fiw:
+                json.dump(tags[t][loc], fiw)
+
+    with open((OUTPUT_TAGS_LIST).with_suffix('.json'), 'w') as fiw:
+        json.dump(list(tags), fiw)
 
 def get_url_field_data(input_data, field):
     response = {}
@@ -244,4 +307,18 @@ def get_url_field_data(input_data, field):
     return response
 
 
-run()
+def get_fake_file(locale: str, id: str, pages: dict[str, dict[str, Path]]):
+    localise_path = id
+
+    while localise_path not in pages or locale not in pages[localise_path]:
+        last_sep = localise_path.rfind('/')
+        if last_sep < 0:
+            localise_path = ''
+        else:
+            localise_path = localise_path[:last_sep]
+
+    id_path = id[len(localise_path) + 1:] if len(localise_path) > 0 else id
+    return (pages[localise_path][locale].with_suffix('') / id_path).with_suffix('.md')
+
+if __name__ == '__main__':
+    run()

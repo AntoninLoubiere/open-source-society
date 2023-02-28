@@ -1,12 +1,16 @@
 ---
 id: actors
 title: Acteurs
+import:
+    - PageCardList
 ---
 
-# Fondations
+# Acteurs
 
--   [Mozilla](acteurs/mozilla)
+## Fondations
 
-# Entreprise privées
+<PageCardList pagesIds={['fr/acteurs/mozilla']} />
 
--   [Google](acteurs/google)
+## Entreprise privées
+
+<PageCardList pagesIds={['fr/acteurs/mozilla', 'fr/acteurs/google']} />

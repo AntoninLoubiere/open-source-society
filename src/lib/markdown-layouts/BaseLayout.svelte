@@ -1,56 +1,26 @@
 <script lang="ts">
+    import BreadcrumbURL from '$lib/components/Breadcrumb/BreadcrumbURL.svelte';
+    import WindowsLayout from '$lib/components/WindowsLayout.svelte';
     import { page } from '$app/stores';
-    import { t } from 'svelte-intl-precompile';
+    import FooterPage from '$lib/components/FooterPage.svelte';
+
+    import './markdown.css';
 
     export let title: string;
     export let showTitle = false;
     export let last_modification: string = '';
-    $: lastModificationDate = new Date(last_modification);
     export let edit_url: string = '';
-
-    $: titleHead = title ? title + ' - Open Source Society' : 'Open Source Society';
-
-    import BreadcrumbUrl from '$lib/components/BreadcrumbURL.svelte';
-    import './markdown.css';
-    import GithubEditButton from './_GithubEditButton.svelte';
 </script>
 
-<svelte:head>
-    <title>{titleHead}</title>
-</svelte:head>
-
-<div class="min-h-full-content bg-primary-variant-50">
-    <div class="grid gap-4 lg:grid-cols-page-layout-lg lg:p-4 xl:grid-cols-page-layout-xl">
-        <div class="hidden xl:block" />
-        <article
-            class="mx-auto h-min w-full min-w-min max-w-[125ch] bg-white px-4 py-2 lg:rounded-xl lg:border"
-        >
-            <nav class="border-b border-gray-400 pb-2">
-                <BreadcrumbUrl url={$page.url.pathname.slice(1)} />
-            </nav>
-            <div class="markdown">
-                {#if showTitle}
-                    <h1>{title}</h1>
-                {/if}
-                <div class="not-prose border-y border-gray-400 lg:hidden">
-                    <slot name="sidebar" isSide={false} />
-                </div>
-                <slot />
-                {#if last_modification || edit_url}
-                    <hr class="!mt-8 !mb-4 !border-gray-400" />
-                    <footer class="flex flex-wrap justify-between gap-2">
-                        {#if edit_url}
-                            <GithubEditButton url={edit_url} />
-                        {/if}
-                        {#if last_modification}
-                            {$t('projects.last_modification', { values: { lastModificationDate } })}
-                        {/if}
-                    </footer>
-                {/if}
-            </div>
-        </article>
-        <div class="prose hidden lg:block">
-            <slot name="sidebar" isSide />
-        </div>
+<WindowsLayout {title}>
+    <BreadcrumbURL url={$page.url.pathname.slice(1)} />
+    {#if showTitle}
+        <h1>{title}</h1>
+    {/if}
+    <div class="not-prose border-y border-gray-400 lg:hidden">
+        <slot name="sidebar" isSide={false} />
     </div>
-</div>
+    <slot />
+    <FooterPage {edit_url} {last_modification}></FooterPage>
+    <slot name="sidebar" slot="sidebar" isSide />
+</WindowsLayout>

@@ -1,5 +1,6 @@
 ---
 title: Chromium
+summary: Chromium is a browser maintained by Google. It's the engine of many browser like Google Chrome, Edge…
 alternatives:
     - name: Firefox
       url: internal://projects/office-suite/firefox
@@ -23,4 +24,5 @@ tags:
     - ios
     - office-suite
     - browser
+logo: projects/chromium.png
 ---

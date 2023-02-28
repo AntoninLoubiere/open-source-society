@@ -44,14 +44,16 @@
     <Tags {tags} />
 
     <section slot="sidebar" let:isSide class:isSide class="relative">
-        <figure class="mt-0 mb-1" class:is-inline={!isSide}>
-            <img
-                alt="{title} logo."
-                src={base + ASSETS + logo}
-                class="mx-auto max-h-[8rem] max-w-full"
-            />
-            <figcaption class="text-center">{title} logo.</figcaption>
-        </figure>
+        {#if logo}
+            <figure class="mt-0 mb-1" class:is-inline={!isSide}>
+                <img
+                    alt="{title} logo."
+                    src={base + ASSETS + logo}
+                    class="mx-auto max-h-[8rem] max-w-full"
+                />
+                <figcaption class="text-center">{title} logo.</figcaption>
+            </figure>
+        {/if}
         <dl>
             <UrlEntrie label="maintainer" data={maintainer} />
             <UrlEntrie label="website" data={website} />

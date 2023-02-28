@@ -1,13 +1,28 @@
 <script lang="ts">
-    import { t } from 'svelte-intl-precompile';
+    import { base } from '$app/paths';
+    import { getColor } from '$lib/tags/color';
+    import { locale, t } from 'svelte-intl-precompile';
 
     export let tag: string;
+    export let small = false;
 
-    import tagColors from './tagColors.json';
-
-    $: color = (tagColors as Record<string, Record<string, string>>)[tag] || tagColors.app;
+    $: color = getColor(tag);
 </script>
 
-<li class="rounded-full border py-1 px-2 font-semibold {color.text} {color.bg} {color.border}">
-    {$t(`tag.${tag}`)}
-</li>
+<a
+    href="{base}/{$locale}/tag/{tag}"
+    data-sveltekit-preload-data="hover"
+    data-sveltekit-preload-code="hover"
+    title={$t(`tag.description.${tag}`)}
+>
+    <li
+        class="rounded-full border font-semibold text-{color}-500 bg-{color}-50 border-{color}-500"
+        class:text-xs={small}
+        class:px-1={small}
+        class:py-0.5={small}
+        class:py-1={!small}
+        class:px-2={!small}
+    >
+        {$t(`tag.${tag}`)}
+    </li>
+</a>

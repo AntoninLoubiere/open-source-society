@@ -1,11 +1,12 @@
 ---
 title: Office Suite
 layout: projects-dir
+import:
+    - PageCardList
 ---
 
 # Office Suite
 
 ### Browsers
 
--   [Firefox](office-suite/firefox)
--   [Chromium](office-suite/chromium)
+<PageCardList pagesIds={['en/projects/office-suite/firefox', 'en/projects/office-suite/chromium']} />

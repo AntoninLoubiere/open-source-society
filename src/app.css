@@ -15,3 +15,9 @@
         @apply cursor-pointer;
     }
 }
+
+@layer base {
+    .pulsing-text {
+        @apply h-2 rounded-full bg-slate-200;
+    }
+}

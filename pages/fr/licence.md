@@ -1,8 +1,10 @@
 ---
 id: license
 title: Licence
+import:
+    - PageCardList
 ---
 
 # Licence
 
--   [MPL](licence/MPL)
+<PageCardList pagesIds={['fr/licence/MPL']} />

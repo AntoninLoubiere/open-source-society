@@ -28,3 +28,4 @@ Available locales:
         >
     </li>
 </ul>
+<a href="/open-source-society/fr/tag/app">test</a>
