@@ -1,0 +1,1 @@
+const s="rose",t="rose",c="rose",i="pink",e="pink",r="fuchsia",a="fuchsia",p="indigo",d="indigo",f="indigo",k="sky",l="sky",u="amber",o={project:s,actor:t,license:c,app:i,fondation:e,"private-company":"pink",desktop:r,phone:a,linux:p,macos:d,windows:f,android:k,ios:l,"office-suite":"emerald",browser:u};function g(n){return o[n]||o.project}export{g};

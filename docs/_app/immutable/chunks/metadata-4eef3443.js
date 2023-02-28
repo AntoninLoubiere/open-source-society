@@ -1,0 +1,1 @@
+const o="Firefox",t=["project","app","desktop","phone","linux","macos","windows","android","ios","office-suite","browser"],e="Firefox is an open-source browser actively maintained by the Mozilla Fondation.",s="projects/firefox.svg",i="projects/office-suite/firefox",a={title:o,tags:t,summary:e,logo:s,id:i};export{a as default,i as id,s as logo,e as summary,t as tags,o as title};
