@@ -5,5 +5,5 @@ tags:
     - actor
     - fondation
     - private-company
-logo: actors/mozilla.svg
+img: actors/mozilla.svg
 ---

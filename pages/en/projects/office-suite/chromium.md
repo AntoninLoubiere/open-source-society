@@ -24,5 +24,5 @@ tags:
     - ios
     - office-suite
     - browser
-logo: projects/chromium.png
+img: projects/chromium.png
 ---

@@ -30,12 +30,12 @@ FIELDS_URL_MAPPER = {
         'mpl': 'internal://license/MPL'
     }
 }
-FIELDS_TO_COPY = {"title", "tag", "tags", "layout", "logo"} | FIELDS_URLS_OPTIONAL
+FIELDS_TO_COPY = {"title", "summary", "tag", "tags", "layout", "img"} | FIELDS_URLS_OPTIONAL
 FIELDS_REQUIRED = {
     "title",
     # "summary"
 }
-METADATA_EXPORT = {"title", "summary", "logo", "id", "tags"}
+METADATA_EXPORT = {"title", "summary", "img", "id", "tags"}
 
 AUTO_LAYOUT = {
     re.compile("^projects/.*"): "projects",

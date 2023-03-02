@@ -8,8 +8,10 @@
 
     import BaseLayout from './BaseLayout.svelte';
     export let title;
+    export let summary;
+    export let img;
     export let edit_url;
     export let last_modification;
 </script>
 
-<BaseLayout {title} {edit_url} {last_modification}><slot /></BaseLayout>
+<BaseLayout {title} {summary} {img} {edit_url} {last_modification}><slot /></BaseLayout>

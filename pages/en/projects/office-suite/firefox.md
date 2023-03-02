@@ -34,5 +34,5 @@ tags:
     - ios
     - office-suite
     - browser
-logo: projects/firefox.svg
+img: projects/firefox.svg
 ---

@@ -8,10 +8,14 @@
     export let edit_url;
     /** @type {string} */
     export let last_modification;
+    /** @type {string} */
+    export let summary;
+    /** @type {string} */
+    export let img;
 
 </script>
 
-<BaseLayout {title} {edit_url} {last_modification} showTitle={true}>
+<BaseLayout {title} {summary} {img} {edit_url} {last_modification} showTitle={true}>
     <slot/>
     <TagList/>
 </BaseLayout>

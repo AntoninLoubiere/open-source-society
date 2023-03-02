@@ -23,7 +23,7 @@ type PageMetadata = {
     title: string;
     7;
     summary: string;
-    logo: string;
+    img: string;
     tags?: string[];
     missing?: boolean;
 };

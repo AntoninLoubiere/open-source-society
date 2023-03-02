@@ -15,6 +15,8 @@
     /** @type {string} */
     export let title;
     /** @type {string} */
+    export let summary;
+    /** @type {string} */
     export let edit_url;
     /** @type {string} */
     export let last_modification;
@@ -33,25 +35,31 @@
     /** @type {FrontmatterURLField} */
     export let income;
     /** @type {string | undefined} */
-    export let logo;
+    export let img;
     /** @type {FrontmatterURLField} */
     export let alternatives;
     /** @type {string[] | undefined} */
     export let tags;
 </script>
 
-<BaseLayout {title} {edit_url} {last_modification} showTitle={true}>
+<svelte:head>
+{#if  img}
+<meta property="og:image:alt" content={$t('projects.logo.desc', {values: {project: title}})}>
+{/if}
+</svelte:head>
+
+<BaseLayout {title} {img} {summary} {edit_url} {last_modification} showTitle={true}>
     <Tags {tags} />
 
     <section slot="sidebar" let:isSide class:isSide class="relative">
-        {#if logo}
+        {#if img}
             <figure class="my-1" class:is-inline={!isSide}>
                 <img
-                    alt="{title} logo."
-                    src={base + ASSETS + logo}
+                    alt="{$t('projects.logo.desc', {values: {project: title}})}"
+                    src={base + ASSETS + img}
                     class="mx-auto max-h-[8rem] max-w-full"
                 />
-                <figcaption class="text-center">{title} logo.</figcaption>
+                <figcaption class="text-center">{$t('projects.logo.desc', {values: {project: title}})}</figcaption>
             </figure>
         {/if}
         <dl>

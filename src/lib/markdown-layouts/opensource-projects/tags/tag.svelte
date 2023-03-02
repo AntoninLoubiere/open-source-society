@@ -6,6 +6,10 @@
     /** @type {string} */
     export let title;
     /** @type {string} */
+    export let img;
+    /** @type {string} */
+    export let summary;
+    /** @type {string} */
     export let edit_url;
     /** @type {string} */
     export let last_modification;
@@ -13,10 +17,11 @@
     export let tag;
     /** @type {string[]} */
     export let files;
+    
     $: color = getColor(tag);
 </script>
 
-<BaseLayout {title} {edit_url} {last_modification}>
+<BaseLayout {title} {summary} {img} {edit_url} {last_modification}>
     <h1 class="underline decoration-4 decoration-{color}-500">{title}</h1>
     <slot/>
     <PageCardList pagesIds={files} />

@@ -4,5 +4,5 @@ summary: Google is a huge US company created by Larry Page and Sergey Brin. Famo
 tags:
     - actor
     - private-company
-logo: actors/google.png
+img: actors/google.png
 ---

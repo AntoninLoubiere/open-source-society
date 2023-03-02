@@ -4,6 +4,7 @@
     import { ASSETS } from '$lib/config';
     import { addToCache, getMetadataFromCache, getPageMetadata } from '$lib/metadata_importer';
     import { inview } from 'svelte-inview';
+    import {t} from 'svelte-intl-precompile'
     import Tags from './Tags.svelte';
 
     export let pageId: string;
@@ -39,10 +40,10 @@
             <article class="flex h-full flex-col">
                 <div class="mb-2 flex flex-grow">
                     <div class="my-auto h-20 mr-2">
-                        {#if page.logo}
+                        {#if page.img}
                             <img
-                                alt="{page.title} logo."
-                                src={base + ASSETS + page.logo}
+                                alt="{$t('projects.logo.desc', {values: {project: page.title}})}"
+                                src={base + ASSETS + page.img}
                                 class="!m-0 h-full min-w-[5rem]"
                             />
                         {/if}
