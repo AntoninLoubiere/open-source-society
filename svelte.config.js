@@ -30,6 +30,8 @@ const config = {
                 projects: 'src/lib/markdown-layouts/opensource-projects/project.svelte',
                 actor: 'src/lib/markdown-layouts/opensource-projects/actor.svelte',
                 'projects-dir': 'src/lib/markdown-layouts/opensource-projects/directory.svelte',
+                'tag-list': 'src/lib/markdown-layouts/opensource-projects/tags/tags-list.svelte',
+                'tag': 'src/lib/markdown-layouts/opensource-projects/tags/tag.svelte',
                 _: 'src/lib/markdown-layouts/default.svelte',
             },
         }),

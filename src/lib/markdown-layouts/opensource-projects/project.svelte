@@ -45,7 +45,7 @@
 
     <section slot="sidebar" let:isSide class:isSide class="relative">
         {#if logo}
-            <figure class="mt-0 mb-1" class:is-inline={!isSide}>
+            <figure class="my-1" class:is-inline={!isSide}>
                 <img
                     alt="{title} logo."
                     src={base + ASSETS + logo}
@@ -76,8 +76,7 @@
 
 <style>
     section.isSide {
-        @apply sticky top-14  max-w-max overflow-scroll rounded-lg border bg-white px-2 py-1;
-        max-height: calc(100vh - 4rem);
+        @apply my-2 max-w-max rounded-lg border bg-white px-2 py-1;
     }
 
     figure.is-inline {
@@ -88,6 +87,6 @@
         @apply hidden;
     }
     details.is-inline {
-        @apply my-3 rounded-lg border border-gray-400 px-2 py-1;
+        @apply my-2 rounded-lg border border-gray-400 px-2 py-1;
     }
 </style>

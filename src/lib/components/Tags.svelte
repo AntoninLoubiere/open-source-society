@@ -9,7 +9,6 @@
     {#if tags?.length}
         <ul
             class="flex flex-wrap gap-1 text-sm"
-            class:justify-evenly={small}
             class:gap-x-0.5={small}
         >
             {#each tags as tag}

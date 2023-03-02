@@ -17,7 +17,7 @@
     {#if showTitle}
         <h1>{title}</h1>
     {/if}
-    <div class="not-prose border-y border-gray-400 lg:hidden">
+    <div class="not-prose border-y border-gray-400 lg:hidden my-2">
         <slot name="sidebar" isSide={false} />
     </div>
     <slot />

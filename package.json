@@ -4,16 +4,15 @@
     "private": true,
     "scripts": {
         "pre-build": "python builder/compiler.py",
-        "dev": "pnpm pre-build && vite dev",
-        "build": "pnpm pre-build && vite build && echo \"\" >> docs/.nojekyll",
+        "dev": "python builder/compiler.py clean && vite dev",
+        "build": "python builder/compiler.py clean && vite build && echo \"\" >> docs/.nojekyll",
         "preview": "vite preview",
         "test": "playwright test",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
         "lint": "prettier --check --plugin-search-dir=. . && eslint .",
         "format": "prettier --write --plugin-search-dir=. .",
-        "make-translations": "python builder/translations.py",
-        "make-colors": "python builder/generate-tags-color-list.py"
+        "make-colors": "python builder/generate_tags_color_list.py"
     },
     "devDependencies": {
         "@playwright/test": "^1.31.1",

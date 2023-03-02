@@ -1,0 +1,4 @@
+<script lang="ts">
+    import TagListElement from "$lib/components/TagListElement.svelte"
+</script>
+<ul><TagListElement tag="actor"/><ul><TagListElement tag="fondation"/><TagListElement tag="private-company"/></ul><TagListElement tag="license"/><TagListElement tag="project"/><ul><TagListElement tag="app"/><ul><TagListElement tag="desktop"/><ul><TagListElement tag="windows"/><TagListElement tag="linux"/><TagListElement tag="macos"/></ul><TagListElement tag="phone"/><ul><TagListElement tag="android"/><TagListElement tag="ios"/></ul><TagListElement tag="office-suite"/><ul><TagListElement tag="browser"/></ul></ul></ul></ul>

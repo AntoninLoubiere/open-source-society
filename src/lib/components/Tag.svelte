@@ -1,7 +1,7 @@
 <script lang="ts">
     import { base } from '$app/paths';
     import { getColor } from '$lib/tags/color';
-    import { locale, t } from 'svelte-intl-precompile';
+    import { t } from 'svelte-intl-precompile';
 
     export let tag: string;
     export let small = false;
@@ -10,7 +10,7 @@
 </script>
 
 <a
-    href="{base}/{$locale}/tag/{tag}"
+    href="{base}/{$t(`tags.${tag}.url`)}"
     data-sveltekit-preload-data="hover"
     data-sveltekit-preload-code="hover"
     title={$t(`tag.description.${tag}`)}

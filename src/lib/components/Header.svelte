@@ -50,7 +50,7 @@
             <HeaderLink pathId="actors" label="actors" />
             <HeaderLink pathId="license" label="license" />
             <HeaderLink pathId="projects" label="projects" />
-            <HeaderLink pathId="/tag" label="tags" />
+            <HeaderLink pathId="tag" label="tags" />
         </nav>
         <div class="flex justify-end sm:w-52" />
     </header>

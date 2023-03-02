@@ -5,6 +5,7 @@ TRANSLATIONS_FILE = "./locales/translations.csv"
 # UNIVERSAL_FILE = "./locales/universal.csv"
 # UNIVERSAL_FILE_OUTPUT = "./locales/universal.json"
 TRANSLATIONS_DIR = "./locales/"
+TAG_FORMAT = "tags.{tag}.url"
 
 translations = {}
 universal = {}
@@ -33,6 +34,13 @@ def load_translations():
     #         universal[row['key']] = row['value']
 
     # print("[TRANSLATIONS] Universal loaded.")
+
+def add_tags_url_translations(tags_url):
+    for l in translations:
+        for t in tags_url[l]:
+            translations[l][TAG_FORMAT.format(tag=t)] = tags_url[l][t]
+    print(f"[TRANSLATIONS] Tags urls has been added in each locales.")
+
 def write_translations():
     for t in translations:
         path = TRANSLATIONS_DIR + t + ".json"

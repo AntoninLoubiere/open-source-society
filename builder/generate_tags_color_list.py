@@ -1,26 +1,10 @@
 from pathlib import Path
 
+from markdown_config import TAGS_COLOR
+
 
 OUTPUT_FILE = Path('src') / 'lib' / 'tags' / 'tagColors.json'
 TAILWIND_COLORS_USED = Path('src') / 'lib' / 'tags' / 'tag-colors-class.txt'
-
-TAGS_COLOR = {
-    'project': 'rose',
-    'actor': 'rose',
-    'license': 'rose',
-    'app': 'pink',
-    'fondation': 'pink',
-    'private-company': 'pink',
-    'desktop': 'fuchsia',
-    'phone': 'fuchsia',
-    'linux': 'indigo',
-    'macos': 'indigo',
-    'windows': 'indigo',
-    'android': 'sky',
-    'ios': 'sky',
-    'office-suite': 'emerald',
-    'browser': 'amber'
-}
 
 PROPERTY_USED = {
     'text-{color}-500',

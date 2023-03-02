@@ -38,10 +38,15 @@ export const load: PageLoad<{
             backPath = backPath.slice(0, sep);
         }
 
-        return {
-            available_lang: allIds[resultPath],
-            backPath: allIds[backPath][lang],
-        };
+        const available_lang: Record<string, string> = {}
+
+        for (const [id, val] of Object.entries(allIds[resultPath])) {
+            if (!val.endsWith('!')) available_lang[id] = val
+        }
+            return {
+                available_lang,
+                backPath: allIds[backPath][lang],
+            };
     }
 
     throw error(404);

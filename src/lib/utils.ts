@@ -6,12 +6,16 @@ export function isAppLink(pageUrl: URL, url: string) {
     return new URL(url, pageUrl).hostname == pageUrl.hostname;
 }
 
+function removeTrailingBang(s: string) {
+    return s.endsWith('!') ? s.slice(0, -1) : s
+}
+
 export function getLocaliseURL(pageUrl: string, locale: string) {
     if (pageUrl.startsWith('/')) pageUrl = pageUrl.slice(1);
 
     if (pageUrl in routes) {
         const trans = (routes as Record<string, Record<string, string>>)[pageUrl];
-        if (locale in trans) return base + '/' + trans[locale];
+        if (locale in trans) return base + '/' + removeTrailingBang(trans[locale]);
     }
 
     const sep = pageUrl.lastIndexOf('/');
@@ -20,7 +24,7 @@ export function getLocaliseURL(pageUrl: string, locale: string) {
         if (basePath in routes) {
             const trans = (routes as Record<string, Record<string, string>>)[basePath];
             if (locale in trans) {
-                return base + '/' + trans[locale] + pageUrl.slice(sep);
+                return base + '/' + removeTrailingBang(trans[locale]) + pageUrl.slice(sep);
             }
         }
     }

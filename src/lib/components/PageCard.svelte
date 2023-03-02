@@ -38,12 +38,12 @@
         >
             <article class="flex h-full flex-col">
                 <div class="mb-2 flex flex-grow">
-                    <div class="my-auto h-20">
+                    <div class="my-auto h-20 mr-2">
                         {#if page.logo}
                             <img
                                 alt="{page.title} logo."
                                 src={base + ASSETS + page.logo}
-                                class="!m-0 h-full min-w-[5rem] pr-2"
+                                class="!m-0 h-full min-w-[5rem]"
                             />
                         {/if}
                     </div>
