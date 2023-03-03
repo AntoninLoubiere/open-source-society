@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Tag from './Tag.svelte';
+    import TagSmall from './TagSmall.svelte';
 
     export let tags: string[] | undefined;
 </script>
@@ -7,10 +7,10 @@
 <div class="not-prose">
     {#if tags?.length}
         <ul
-            class="flex flex-wrap gap-1 text-sm"
+            class="flex flex-wrap gap-1 text-sm gap-x-0.5"
         >
             {#each tags as tag}
-                <Tag {tag} />
+                <TagSmall {tag} />
             {/each}
         </ul>
     {/if}

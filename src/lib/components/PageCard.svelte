@@ -6,6 +6,7 @@
     import { inview } from 'svelte-inview';
     import {t} from 'svelte-intl-precompile'
     import Tags from './Tags.svelte';
+    import TagsSmall from './TagsSmall.svelte';
 
     export let pageId: string;
 
@@ -57,7 +58,7 @@
                         <span class="text-sm">{page.summary}</span>
                     </div>
                 </div>
-                <Tags tags={page.tags} small />
+                <TagsSmall tags={page.tags} />
             </article>
         </a>
     {:else}
@@ -82,7 +83,7 @@
                     <div class="pulsing-text" />
                 </div>
             </div>
-            <div class="flex flex-wrap justify-evenly gap-1">
+            <div class="flex flex-wrap gap-1">
                 <div class="pulsing-text h-3 w-14" />
                 <div class="pulsing-text h-3 w-10" />
                 <div class="pulsing-text h-3 w-20" />
