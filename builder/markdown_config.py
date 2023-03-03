@@ -21,7 +21,7 @@ FIELDS_URLS_OPTIONAL = {
     "issue_tracker",
     "contributions",
     "income",
-    "alternatives"
+    "alternatives",
 }
 
 # IMPORTANT: key should be in lowercase
@@ -31,10 +31,10 @@ FIELDS_URL_MAPPER = {
     }
 }
 FIELDS_TO_COPY = {"title", "summary", "tag", "tags", "layout", "img"} | FIELDS_URLS_OPTIONAL
+FIELDS_REQUIRED_NO_COPY = {"summary"}
 FIELDS_REQUIRED = {
     "title",
-    # "summary"
-}
+} | FIELDS_REQUIRED_NO_COPY
 METADATA_EXPORT = {"title", "summary", "img", "id", "tags"}
 
 AUTO_LAYOUT = {
@@ -63,7 +63,9 @@ TAGS_COLOR = {
     'android': 'sky',
     'ios': 'sky',
     'office-suite': 'emerald',
-    'browser': 'amber'
+    'communication': 'emerald',
+    'browser': 'amber',
+    'im': 'amber',
 }
 
 LOGO_OUTPUT_DIR = Path("src/lib/assets/projects/")

@@ -32,7 +32,7 @@
         <a
             id={pageId}
             href="{base}/{pageId}"
-            class="max-w-2xl rounded-md border border-gray-400 py-2 px-2 hover:border-primary"
+            class="max-w-2xl rounded-md border border-gray-400 py-2 px-2 hover:border-primary hover:text-primary group"
             data-sveltekit-preload-data="hover"
             data-sveltekit-preload-code="viewport"
             data-metadata={metadata_tag}
@@ -53,7 +53,7 @@
                         class:italic={page.missing}
                         class:opacity-75={page.missing}
                     >
-                        <h3 class="!my-0">{page.title}</h3>
+                        <h3 class="!my-0 group-hover:text-primary">{page.title}</h3>
                         <span class="text-sm">{page.summary}</span>
                     </div>
                 </div>

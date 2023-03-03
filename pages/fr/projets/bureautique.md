@@ -1,6 +1,7 @@
 ---
 id: office-suite
 title: Bureautique
+summary: La liste des applications open source de bureautique. 
 import:
     - PageCardList
 ---

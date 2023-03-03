@@ -46,7 +46,7 @@
                 </svg>
             </BreadcrumbItem>
         {:else}
-            <BreadcrumbItem {href}>{label}</BreadcrumbItem>
+            <BreadcrumbItem {href} colored={isLastItem}>{label}</BreadcrumbItem>
         {/if}
         {#if !isLastItem}
             <BreadcumpSep />

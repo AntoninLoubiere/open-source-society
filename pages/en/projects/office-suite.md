@@ -1,5 +1,6 @@
 ---
 title: Office Suite
+summary: The list of the open source office-suite applications.
 layout: projects-dir
 import:
     - PageCardList

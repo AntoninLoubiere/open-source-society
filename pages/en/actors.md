@@ -1,6 +1,6 @@
 ---
 title: Actors
-summary: The list of the actors of the OpenSource
+summary: The list of the actors of the open source
 layout: projects-dir
 import:
     - PageCardList

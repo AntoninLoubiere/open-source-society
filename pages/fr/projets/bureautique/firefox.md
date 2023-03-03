@@ -1,4 +1,5 @@
 ---
+summary: Firefox est un navigateur web activement maintenue par la Fondation Mozilla.
 income:
     - Partenariats
     - name: Produits payants

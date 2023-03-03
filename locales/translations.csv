@@ -29,10 +29,10 @@ projects.issue_tracker,"Issue {nb, plural, one {tracker} other {trackers}}","{nb
 projects.last_modification,"Last modified {lastModificationDate, date, datetime}","Dernière modification {lastModificationDate, date, datetime}"
 projects.license,"{nb, plural, one {License} other {Licenses}}","{nb, plural, one {Licence} other {Licences}}"
 projects.maintainer,"{nb, plural, one {Maintainer} other {Maintainers}}","{nb, plural, one {Mainteneur} other {Mainteneurs}}"
-projects.not-found.body,We didn’t find this page.,Nous n’avons pas trouvé cette page.
+projects.not-found.body,This page doesn’t existe yet.,Cette page n’existe pas encore.
 projects.not-found.body.exists,This page doesn’t exist yet in {lang} but this page exist in:,Cette page n’existe pas encore en {lang} mais elle existe en :
 projects.not-found.page.title,Not found,Non trouvé
-projects.not-found.title,"Sorry, this page doesn’t exist in {lang}","Désolé, cette page n’existe pas en {lang}"
+projects.not-found.title,"Sorry, this page doesn’t exist yet in {lang}","Désolé, cette page n’existe pas encore en {lang}"
 projects.repository,"{nb, plural, one {Repository} other {Repositories}}","{nb, plural, one {Dépôt} other {Dépôts}}"
 projects.unknown,Unknown,Inconnu
 projects.website,"Official {nb, plural, one {website} other {websites}}","{nb, plural, one {Site web officiel} other {Sites webs officiels}}"
@@ -69,3 +69,7 @@ tag.projects,Projects,Projets
 tag.windows,Windows,Windows
 tags,Tags,Étiquettes
 projects.logo.desc,{project} logo.,{project} logo.
+tag.communication,Communication,Communication
+tag.im,Instant Messaging,Messagerie Instantanée
+tag.description.communication,A communication project.,Un projet de télécommunication.
+tag.description.im,An instant messaging project.,Un projet de communication instantanée.

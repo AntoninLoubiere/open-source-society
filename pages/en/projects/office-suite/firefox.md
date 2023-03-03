@@ -1,6 +1,6 @@
 ---
 title: Firefox
-summary: Firefox is an open-source browser actively maintained by the Mozilla Fondation.
+summary: Firefox is an open source browser actively maintained by the Mozilla Fondation.
 alternatives:
     - name: Chromium
       url: internal://projects/office-suite/chromium

@@ -18,7 +18,7 @@ def get_tags(id: str, file: frontmatter.Post):
     return list(filter(lambda t: t in tags, TAGS_COLOR))
 
 def get_import_line(components: list[str]):
-    line = "<script>"
+    line = "\n<script>"
     for c in components:
         line += f"import {c[c.rfind('/') + 1:]} from \"$lib/components/{c}.svelte\";"
     line += "</script>"
@@ -35,7 +35,17 @@ def remove_loc_prefix(path: str):
     return path[path.find('/') + 1:]
 
 def log(message, label="OK"):
-    print(f"[MDC] {label:^10}: {message}")
+    color = ""
+    if label == "ERROR":
+        print(f"\033[31m[MDC] {label:^10} {message}\033[;m:")
+        return
+    elif label == "OK":
+        color = "\033[32m"
+    elif label == "SKIPPED":
+        color = "\033[36m"
+    elif label == "WARNING":
+        color = "\033[33m"
+    print(f"[MDC] {color}{label:^10}\033[;m: {message}")
 
 def path_to_id(path: Path):
     return path.with_suffix('').as_posix()
@@ -129,8 +139,9 @@ def run(doClean=False):
         files = pages[id]
         files_set = set(files)
         if files_set != LOCALES:
-            log(f"Missing some translations, {id}", "WARNING")
-            for loc in LOCALES - files_set:
+            missing = LOCALES - files_set
+            log(f"{id} is missing the translations: {', '.join(missing)}", "WARNING")
+            for loc in missing:
                 files[loc] = get_fake_file(loc, id, pages)
                 path_to_id[loc][remove_loc_prefix(files[loc])] = id
 
@@ -142,7 +153,6 @@ def run(doClean=False):
         files = pages[id]
 
         ref_file_path = (INPUT_PATH / REFERENCE_LOCALE / id).with_suffix('.md')
-        print(id)
         do_ref_exists = ref_file_path.exists()
         if do_ref_exists:
             ref_markdown_file = _load_md_file(REFERENCE_LOCALE, ref_file_path)
@@ -180,10 +190,14 @@ def run(doClean=False):
                 tags_urls[loc][ref_markdown_file["tag"]] = files[loc]
 
             if not isinstance(markdown_file, dict) and markdown_file.content.strip():
+                missing_no_copy = set()
                 if loc != REFERENCE_LOCALE and do_ref_exists:
                     for field in FIELDS_TO_COPY:
                         if field in ref_markdown_file and field not in markdown_file:
                             markdown_file[field] = ref_markdown_file[field]
+
+                            if field in FIELDS_REQUIRED_NO_COPY:
+                                missing_no_copy.add(field)
 
                 for field in FIELDS_URLS_OPTIONAL:
                     if field in markdown_file:
@@ -203,15 +217,14 @@ def run(doClean=False):
                     markdown_file["files"] = get_files_tagged(pages, loc, tags, markdown_file["tag"])
 
 
-                if not FIELDS_REQUIRED.issubset(markdown_file.keys()):
-                    missing_fields = FIELDS_REQUIRED - markdown_file.keys()
+                missing_fields = (FIELDS_REQUIRED - markdown_file.keys()) | missing_no_copy
+                if missing_fields:
                     log(
-                        f"{files[loc]} doesn't have the required field{'s' if len(missing_fields) != 1 else ''}: {', '.join(missing_fields)}",
+                        f"{INPUT_PATH / files[loc]}.md doesn't have the required field{'s' if len(missing_fields) != 1 else ''}: {', '.join(missing_fields)}",
                         "WARNING",
                     )
 
                 frontmatter.dump(markdown_file, output_file)
-                log(files[loc])
             else:
                 metadata['missing'] = True
                 skipped.add(files[loc])
@@ -219,6 +232,8 @@ def run(doClean=False):
 
             with open(output_file.with_name('metadata.json'), 'w') as fiw:
                 json.dump(metadata, fiw)
+
+    log(f"Done generating successfully {len(pages) * len(LOCALES) - len(skipped)} pages in {', '.join(LOCALES)}.")
 
     # Write Ids
     file = OUTPUT_PATH / "en" / "ids.json"

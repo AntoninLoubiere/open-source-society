@@ -1,9 +1,11 @@
 ---
 title: Projects
-summary: The list of projects
+summary: The list of the open source projects.
 layout: projects-dir
+import:
+    - PageCardList
 ---
 
 # Open Source Projects
 
--   [Office Suite](projects/office-suite)
+<PageCardList pagesIds={['en/projects/office-suite', 'en/projects/communication']} />

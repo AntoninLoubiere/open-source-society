@@ -1,6 +1,8 @@
 ---
 id: actors
 title: Acteurs
+summary: La liste des acteurs de l'open source.
+
 import:
     - PageCardList
 ---
