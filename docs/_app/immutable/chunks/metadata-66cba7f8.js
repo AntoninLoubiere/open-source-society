@@ -1,0 +1,1 @@
+const t="The list of the list of the pages about the open source applications available on phone.",a="tag/projects/applications/phone",o=[],e="Phone",s={summary:t,id:a,tags:o,title:e};export{s as default,a as id,t as summary,o as tags,e as title};

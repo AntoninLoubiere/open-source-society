@@ -5,7 +5,7 @@
     "scripts": {
         "pre-build": "python builder/compiler.py",
         "dev": "python builder/compiler.py clean && vite dev",
-        "build": "python builder/compiler.py clean && vite build && echo \"\" >> docs/.nojekyll",
+        "build": "python builder/compiler.py clean prod && vite build && echo \"\" >> docs/.nojekyll",
         "preview": "vite preview",
         "test": "playwright test",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

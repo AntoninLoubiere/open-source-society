@@ -1,0 +1,1 @@
+const t="The list of the pages about the open source instant messaging projects.",s="tag/projects/communication/instant-messaging",a=[],n="Instant Messaging",e={summary:t,id:s,tags:a,title:n};export{e as default,s as id,t as summary,a as tags,n as title};

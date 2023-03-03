@@ -1,0 +1,1 @@
+const t="The list of the open source office-suite applications.",e="projects/office-suite",s=[],i="Office Suite",o={summary:t,id:e,tags:s,title:i};export{o as default,e as id,t as summary,s as tags,i as title};

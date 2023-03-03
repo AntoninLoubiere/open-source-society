@@ -122,11 +122,11 @@ def clean():
     shutil.rmtree(LOGO_OUTPUT_DIR, ignore_errors=True)
     log("Clean done.")
 
-def run(doClean=False):
+def run(doClean=False, prod=False):
     def _load_md_file(loc: str, path: Path):
         return frontmatter.load(path)
 
-    if doClean:
+    if doClean or prod:
         clean()
 
     LOGO_OUTPUT_DIR.mkdir(exist_ok=True)
@@ -177,7 +177,8 @@ def run(doClean=False):
                 markdown_file = ref_markdown_file
             else:
                 markdown_file = {}
-            markdown_file["_"] = "FILE AUTOMATICALLY GENERATED, DO NOT EDIT"
+            if not prod:
+                markdown_file["_"] = "FILE AUTOMATICALLY GENERATED, DO NOT EDIT"
             markdown_file["id"] = id
             markdown_file["edit_url"] = EDIT_URL.format(path=files[loc])
             markdown_file["last_modification"] = get_last_modification_date(input_file.as_posix())
@@ -337,4 +338,4 @@ def get_files_tagged(pages, lang, tags, tag):
     return sorted(map(lambda f: pages[f][lang], tags[tag]))
 
 if __name__ == '__main__':
-    run('clean' in sys.argv)
+    run('clean' in sys.argv, 'prod' in sys.argv)

@@ -1,0 +1,1 @@
+const t="The list of the list of the pages about the open source applications available on Android.",a="tag/projects/applications/phone/android",o=[],s="Android",e={summary:t,id:a,tags:o,title:s};export{e as default,a as id,t as summary,o as tags,s as title};

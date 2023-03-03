@@ -1,1 +1,0 @@
-const e="actors",t="license",o="projects",s={"":"",acteurs:e,licence:t,projets:o,"projets/bureautique":"projects/office-suite","projets/bureautique/firefox":"projects/office-suite/firefox","projets/bureautique/chromium":"projects/office-suite/chromium"};export{e as acteurs,s as default,t as licence,o as projets};

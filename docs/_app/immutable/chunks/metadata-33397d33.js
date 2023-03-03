@@ -1,0 +1,1 @@
+const s="La liste des pages à propos des projets open source disponible sur MacOS.",t="tag/projects/applications/desktop/macos",a=[],o="MacOS",e={summary:s,id:t,tags:a,title:o};export{e as default,t as id,s as summary,a as tags,o as title};

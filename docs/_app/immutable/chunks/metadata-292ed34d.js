@@ -1,0 +1,1 @@
+const t="La liste des pages à propos des navigateurs open source.",s="tag/projects/office-suite/browser",e=[],a="Navigateur",o={summary:t,id:s,tags:e,title:a};export{o as default,s as id,t as summary,e as tags,a as title};

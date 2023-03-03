@@ -33,7 +33,7 @@ export const load: PageLoad<{
     const allIds = await allIdsPromise;
     if (resultPath in allIds) {
         let backPath = resultPath;
-        while (backPath && !(backPath in allIds && lang in allIds[backPath])) {
+        while (backPath && !(backPath in allIds && lang in allIds[backPath] && !allIds[backPath][lang].endsWith('!'))) {
             const sep = backPath.lastIndexOf('/');
             backPath = backPath.slice(0, sep);
         }

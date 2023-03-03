@@ -1,0 +1,1 @@
+const s="La liste des pages à propos des entreprises privées travaillant dans l'open source.",t="tag/actors/private-companies",e=[],a="Entreprises Privées",r={summary:s,id:t,tags:e,title:a};export{r as default,t as id,s as summary,e as tags,a as title};
