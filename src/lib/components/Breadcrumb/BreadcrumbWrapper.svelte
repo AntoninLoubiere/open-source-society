@@ -1,3 +1,3 @@
-<nav class="min-h-[2rem] flex flex-wrap items-center gap-1 border-b border-gray-400 mb-2">
+<nav class="mb-2 flex min-h-[2rem] flex-wrap items-center gap-1 border-b border-gray-400">
     <slot />
 </nav>

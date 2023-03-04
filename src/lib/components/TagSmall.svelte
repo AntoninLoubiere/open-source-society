@@ -9,18 +9,15 @@
     $: color = getColor(tag);
 
     function redirect() {
-        goto(`${base}/${$t(`tags.${tag}.url`)}`)
+        goto(`${base}/${$t(`tags.${tag}.url`)}`);
     }
 </script>
 
 <li
-class="rounded-full border font-semibold text-{color}-500 bg-{color}-50 border-{color}-500 text-xs px-1 py-0.5">
-<!-- svelte-ignore a11y-click-events-have-key-events because there is a workaround, you can click on the card and then click on the tags or go to tags directly -->
-<div
-    class="z-20"
-    on:click|preventDefault={redirect}
-    title={$t(`tag.description.${tag}`)}
+    class="rounded-full border font-semibold text-{color}-500 bg-{color}-50 border-{color}-500 px-1 py-0.5 text-xs"
 >
+    <!-- svelte-ignore a11y-click-events-have-key-events because there is a workaround, you can click on the card and then click on the tags or go to tags directly -->
+    <div class="z-20" on:click|preventDefault={redirect} title={$t(`tag.description.${tag}`)}>
         {$t(`tag.${tag}`)}
     </div>
 </li>

@@ -7,7 +7,7 @@ export function isAppLink(pageUrl: URL, url: string) {
 }
 
 function removeTrailingBang(s: string) {
-    return s.endsWith('!') ? s.slice(0, -1) : s
+    return s.endsWith('!') ? s.slice(0, -1) : s;
 }
 
 export function getLocaliseURL(pageUrl: string, locale: string) {

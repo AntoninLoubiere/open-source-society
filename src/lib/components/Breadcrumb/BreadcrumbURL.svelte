@@ -32,7 +32,7 @@
 <BreadcumpWrapper>
     {#each items as { label, href, id }}
         {@const isLastItem = id == items.length - 1}
-            {#if startWithHome && id == 0}
+        {#if startWithHome && id == 0}
             <BreadcrumbItem {href} colored={isLastItem}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

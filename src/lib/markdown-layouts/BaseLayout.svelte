@@ -17,15 +17,15 @@
 </script>
 
 <svelte:head>
-<meta property="og:title" content="{title}" />
-<meta property="og:type" content="article" />
-{#if summary}
-<meta property="og:description" content="{summary}" />
-<meta name="description" content={summary}>
-{/if}
-{#if img}
-<meta property="og:image" content={base + ASSETS + img}>
-{/if}
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="article" />
+    {#if summary}
+        <meta property="og:description" content={summary} />
+        <meta name="description" content={summary} />
+    {/if}
+    {#if img}
+        <meta property="og:image" content={base + ASSETS + img} />
+    {/if}
 </svelte:head>
 
 <WindowsLayout {title}>
@@ -33,10 +33,10 @@
     {#if showTitle}
         <h1>{title}</h1>
     {/if}
-    <div class="not-prose border-y border-gray-400 lg:hidden my-2">
+    <div class="not-prose my-2 border-y border-gray-400 lg:hidden">
         <slot name="sidebar" isSide={false} />
     </div>
     <slot />
-    <FooterPage {edit_url} {last_modification}></FooterPage>
+    <FooterPage {edit_url} {last_modification} />
     <slot name="sidebar" slot="sidebar" isSide />
 </WindowsLayout>

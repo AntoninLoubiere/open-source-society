@@ -1,7 +1,7 @@
 <script>
-    import PageCardList from "$lib/components/PageCardList.svelte";
-    import BaseLayout from "$lib/markdown-layouts/BaseLayout.svelte";
-    import { getColor } from "$lib/tags/color";
+    import PageCardList from '$lib/components/PageCardList.svelte';
+    import BaseLayout from '$lib/markdown-layouts/BaseLayout.svelte';
+    import { getColor } from '$lib/tags/color';
 
     /** @type {string} */
     export let title;
@@ -17,12 +17,12 @@
     export let tag;
     /** @type {string[]} */
     export let files;
-    
+
     $: color = getColor(tag);
 </script>
 
 <BaseLayout {title} {summary} {img} {edit_url} {last_modification}>
     <h1 class="underline decoration-4 decoration-{color}-500">{title}</h1>
-    <slot/>
+    <slot />
     <PageCardList pagesIds={files} />
 </BaseLayout>

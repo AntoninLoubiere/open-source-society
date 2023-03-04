@@ -33,20 +33,27 @@ export const load: PageLoad<{
     const allIds = await allIdsPromise;
     if (resultPath in allIds) {
         let backPath = resultPath;
-        while (backPath && !(backPath in allIds && lang in allIds[backPath] && !allIds[backPath][lang].endsWith('!'))) {
+        while (
+            backPath &&
+            !(
+                backPath in allIds &&
+                lang in allIds[backPath] &&
+                !allIds[backPath][lang].endsWith('!')
+            )
+        ) {
             const sep = backPath.lastIndexOf('/');
             backPath = backPath.slice(0, sep);
         }
 
-        const available_lang: Record<string, string> = {}
+        const available_lang: Record<string, string> = {};
 
         for (const [id, val] of Object.entries(allIds[resultPath])) {
-            if (!val.endsWith('!')) available_lang[id] = val
+            if (!val.endsWith('!')) available_lang[id] = val;
         }
-            return {
-                available_lang,
-                backPath: allIds[backPath][lang],
-            };
+        return {
+            available_lang,
+            backPath: allIds[backPath][lang],
+        };
     }
 
     throw error(404);

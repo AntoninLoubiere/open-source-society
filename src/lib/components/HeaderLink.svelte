@@ -10,13 +10,19 @@
     export let label = '';
     export let activeExact = false;
 
-    $: href = pathId.startsWith('/') ? base + '/' + $locale + pathId : getLocaliseURL(pathId, $locale);
+    $: href = pathId.startsWith('/')
+        ? base + '/' + $locale + pathId
+        : getLocaliseURL(pathId, $locale);
     // let active = false;
     $: active = activeExact ? $page.url.pathname == href : $page.url?.pathname.startsWith(href);
 </script>
 
-<a {href} class:active class="hover:text-secondary hover:underline uppercase font-light" data-sveltekit-preload-data="hover" data-sveltekit-preload-code="hover"
-    ><slot>{$t('header.nav.' + label)}</slot></a
+<a
+    {href}
+    class:active
+    class="font-light uppercase hover:text-secondary hover:underline"
+    data-sveltekit-preload-data="hover"
+    data-sveltekit-preload-code="hover"><slot>{$t('header.nav.' + label)}</slot></a
 >
 
 <style>

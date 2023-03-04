@@ -43,9 +43,12 @@
 </script>
 
 <svelte:head>
-{#if  img}
-<meta property="og:image:alt" content={$t('projects.logo.desc', {values: {project: title}})}>
-{/if}
+    {#if img}
+        <meta
+            property="og:image:alt"
+            content={$t('projects.logo.desc', { values: { project: title } })}
+        />
+    {/if}
 </svelte:head>
 
 <BaseLayout {title} {img} {summary} {edit_url} {last_modification} showTitle={true}>
@@ -55,11 +58,13 @@
         {#if img}
             <figure class="my-1" class:is-inline={!isSide}>
                 <img
-                    alt="{$t('projects.logo.desc', {values: {project: title}})}"
+                    alt={$t('projects.logo.desc', { values: { project: title } })}
                     src={base + ASSETS + img}
                     class="mx-auto max-h-[8rem] max-w-full"
                 />
-                <figcaption class="text-center">{$t('projects.logo.desc', {values: {project: title}})}</figcaption>
+                <figcaption class="text-center">
+                    {$t('projects.logo.desc', { values: { project: title } })}
+                </figcaption>
             </figure>
         {/if}
         <dl>

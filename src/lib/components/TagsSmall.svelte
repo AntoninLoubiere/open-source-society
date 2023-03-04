@@ -6,9 +6,7 @@
 
 <div class="not-prose">
     {#if tags?.length}
-        <ul
-            class="flex flex-wrap gap-1 text-sm gap-x-0.5"
-        >
+        <ul class="flex flex-wrap gap-1 gap-x-0.5 text-sm">
             {#each tags as tag}
                 <TagSmall {tag} />
             {/each}

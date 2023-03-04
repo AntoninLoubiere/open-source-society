@@ -17,9 +17,12 @@
 </script>
 
 <svelte:head>
-{#if  img}
-<meta property="og:image:alt" content={$t('projects.logo.desc', {values: {project: title}})}>
-{/if}
+    {#if img}
+        <meta
+            property="og:image:alt"
+            content={$t('projects.logo.desc', { values: { project: title } })}
+        />
+    {/if}
 </svelte:head>
 
 <BaseLayout {title} {summary} {img} {edit_url} {last_modification}>

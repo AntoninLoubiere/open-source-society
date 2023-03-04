@@ -9,5 +9,6 @@
     data-sveltekit-preload-code="viewport"
     data-sveltekit-preload-data="hover"
     href={base + href}
-    class="font-bold uppercase hover:text-secondary hover:underline inline-block" class:text-primary={colored}><slot /></a
+    class="inline-block font-bold uppercase hover:text-secondary hover:underline"
+    class:text-primary={colored}><slot /></a
 >

@@ -3,8 +3,9 @@ title: Communication
 summary: La liste des projets open-source de communications.
 layout: projects-dir
 import:
-  - PageCardList
+    - PageCardList
 ---
 
 # Communication
+
 <PageCardList pagesIds={['fr/projets/communication/matrix']}/>

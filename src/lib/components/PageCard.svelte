@@ -4,7 +4,7 @@
     import { ASSETS } from '$lib/config';
     import { addToCache, getMetadataFromCache, getPageMetadata } from '$lib/metadata_importer';
     import { inview } from 'svelte-inview';
-    import {t} from 'svelte-intl-precompile'
+    import { t } from 'svelte-intl-precompile';
     import Tags from './Tags.svelte';
     import TagsSmall from './TagsSmall.svelte';
 
@@ -33,17 +33,17 @@
         <a
             id={pageId}
             href="{base}/{pageId}"
-            class="max-w-2xl rounded-md border border-gray-400 py-2 px-2 hover:border-primary hover:text-primary group"
+            class="group max-w-2xl rounded-md border border-gray-400 py-2 px-2 hover:border-primary hover:text-primary"
             data-sveltekit-preload-data="hover"
             data-sveltekit-preload-code="viewport"
             data-metadata={metadata_tag}
         >
             <article class="flex h-full flex-col">
                 <div class="mb-2 flex flex-grow">
-                    <div class="my-auto h-20 mr-2">
+                    <div class="my-auto mr-2 h-20">
                         {#if page.img}
                             <img
-                                alt="{$t('projects.logo.desc', {values: {project: page.title}})}"
+                                alt={$t('projects.logo.desc', { values: { project: page.title } })}
                                 src={base + ASSETS + page.img}
                                 class="!m-0 h-full min-w-[5rem]"
                             />
