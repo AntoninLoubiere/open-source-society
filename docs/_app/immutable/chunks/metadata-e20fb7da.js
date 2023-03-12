@@ -1,0 +1,1 @@
+const s=["actor","private-company"],a="actors/google",o="Google",t="actors/google.png",e="Google is a huge US company created by Larry Page and Sergey Brin. Famous for his search engine, map, drive…",g=!0,i={tags:s,id:a,title:o,img:t,summary:e,missing:!0};export{i as default,a as id,t as img,g as missing,e as summary,s as tags,o as title};

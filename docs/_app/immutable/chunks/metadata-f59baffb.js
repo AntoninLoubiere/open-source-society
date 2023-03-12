@@ -1,0 +1,1 @@
+const s="tag/licenses",e="Licences",t="La liste des pages à propos des licences utilisées dans l'open source.",a=[],c={id:s,title:e,summary:t,tags:a};export{c as default,s as id,t as summary,a as tags,e as title};

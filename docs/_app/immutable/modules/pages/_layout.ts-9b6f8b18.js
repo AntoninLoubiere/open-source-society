@@ -1,0 +1,1 @@
+import{_ as m,l as t,p as l}from"../../chunks/_layout-b768b12f.js";import"../../chunks/config-d69e9f26.js";import"../../chunks/paths-69893b53.js";import"../../chunks/formatters-abf3a7b7.js";export{m as _getLocaleFromUrl,t as load,l as prerender};

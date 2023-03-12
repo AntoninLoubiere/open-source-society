@@ -1,0 +1,1 @@
+const t="projects/office-suite/firefox",e="Firefox",o="projects/firefox.svg",i="Firefox est un navigateur web activement maintenue par la Fondation Mozilla.",s=["project","app","desktop","phone","windows","linux","macos","android","ios","office-suite","browser"],a={id:t,title:e,img:o,summary:i,tags:s};export{a as default,t as id,o as img,i as summary,s as tags,e as title};

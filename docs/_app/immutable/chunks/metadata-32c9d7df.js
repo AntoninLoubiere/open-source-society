@@ -1,0 +1,1 @@
+const s="tag/projects/applications/desktop/linux",t="Linux",e="La liste des pages à propos des projets open source disponible sur Linux.",o=[],a={id:s,title:t,summary:e,tags:o};export{a as default,s as id,e as summary,o as tags,t as title};

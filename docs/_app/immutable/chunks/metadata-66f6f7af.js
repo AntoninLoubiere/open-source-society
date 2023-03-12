@@ -1,1 +1,0 @@
-const t="The list of the list of the pages about the licenses used in open source.",s="tag/licenses",e=[],a="Licenses",o={summary:t,id:s,tags:e,title:a};export{o as default,s as id,t as summary,e as tags,a as title};

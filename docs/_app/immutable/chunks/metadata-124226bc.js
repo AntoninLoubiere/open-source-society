@@ -1,0 +1,1 @@
+const t="",s="",e="This is a website that promotes open source. It describes how the open source is working and has pages about the projects, the actors, and the licenses used.",a=[],o={id:t,title:s,summary:e,tags:a};export{o as default,t as id,e as summary,a as tags,s as title};

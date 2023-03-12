@@ -1,0 +1,1 @@
+const t="tag/projects/communication",o="Communication",a="The list of the pages about the open source communication projects.",s=[],c={id:t,title:o,summary:a,tags:s};export{c as default,t as id,a as summary,s as tags,o as title};

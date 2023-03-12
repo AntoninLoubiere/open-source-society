@@ -1,1 +1,0 @@
-const s="actors/google.png",a="Google is a huge US company created by Larry Page and Sergey Brin. Famous for his search engine, map, drive…",o="actors/google",t=["actor","private-company"],e="Google",g=!0,i={img:s,summary:a,id:o,tags:t,title:e,missing:!0};export{i as default,o as id,s as img,g as missing,a as summary,t as tags,e as title};

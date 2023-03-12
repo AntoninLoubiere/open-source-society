@@ -1,1 +1,0 @@
-const t="Firefox est un navigateur web activement maintenue par la Fondation Mozilla.",e="projects/firefox.svg",o="projects/office-suite/firefox",i=["project","app","desktop","phone","windows","linux","macos","android","ios","office-suite","browser"],s="Firefox",a={summary:t,img:e,id:o,tags:i,title:s};export{a as default,o as id,e as img,t as summary,i as tags,s as title};

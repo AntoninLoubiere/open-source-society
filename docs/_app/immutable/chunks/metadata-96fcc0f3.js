@@ -1,0 +1,1 @@
+const t="tag/projects/applications/phone/ios",a="iOS",s="The list of the list of the pages about the open source applications available on iOS.",o=[],e={id:t,title:a,summary:s,tags:o};export{e as default,t as id,s as summary,o as tags,a as title};

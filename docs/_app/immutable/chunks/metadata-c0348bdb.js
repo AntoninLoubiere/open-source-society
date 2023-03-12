@@ -1,1 +1,0 @@
-const t="La liste des pages à propos des projets open source de bureautique.",e="tag/projects/office-suite",s=[],a="Bureautique",o={summary:t,id:e,tags:s,title:a};export{o as default,e as id,t as summary,s as tags,a as title};

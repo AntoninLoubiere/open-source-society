@@ -1,1 +1,0 @@
-const t="La liste des applications open source de bureautique.",e="projects/office-suite",s=[],a="Bureautique",i={summary:t,id:e,tags:s,title:a};export{i as default,e as id,t as summary,s as tags,a as title};

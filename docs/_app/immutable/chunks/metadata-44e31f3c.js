@@ -1,0 +1,1 @@
+const t="tag/projects/applications/desktop/windows",s="Windows",a="The list of the list of the pages about the open source applications available on Windows.",o=[],e={id:t,title:s,summary:a,tags:o};export{e as default,t as id,a as summary,o as tags,s as title};

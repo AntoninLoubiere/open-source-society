@@ -1,0 +1,1 @@
+const t=["project","communication","im"],i="projects/communication/matrix",s="Matrix",n="projects/matrix.svg",o="Matrix is an open network for secure, decentralized communication.",m=!0,a={tags:t,id:i,title:s,img:n,summary:o,missing:!0};export{a as default,i as id,n as img,m as missing,o as summary,t as tags,s as title};

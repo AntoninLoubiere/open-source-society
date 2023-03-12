@@ -1,1 +1,0 @@
-const t="The list of the pages about the open source office suite projects.",e="tag/projects/office-suite",s=[],o="Office Suite",a={summary:t,id:e,tags:s,title:o};export{a as default,e as id,t as summary,s as tags,o as title};

@@ -1,1 +1,0 @@
-const t="projects/matrix.svg",i="Matrix is an open network for secure, decentralized communication.",s="projects/communication/matrix",n=["project","communication","im"],o="Matrix",m=!0,a={img:t,summary:i,id:s,tags:n,title:o,missing:!0};export{a as default,s as id,t as img,m as missing,i as summary,n as tags,o as title};

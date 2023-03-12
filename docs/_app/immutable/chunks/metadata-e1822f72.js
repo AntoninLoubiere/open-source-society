@@ -1,0 +1,1 @@
+const t="tag/actors/private-companies",a="Private Companies",e="The list of the list of the pages about the private companies acting in the open source.",s=[],o={id:t,title:a,summary:e,tags:s};export{o as default,t as id,e as summary,s as tags,a as title};

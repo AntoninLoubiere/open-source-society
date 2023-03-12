@@ -1,0 +1,1 @@
+const t="tag/actors/fondations",s="Fondations",o="La liste des pages à propos des fondations de l'open source.",a=[],e={id:t,title:s,summary:o,tags:a};export{e as default,t as id,o as summary,a as tags,s as title};

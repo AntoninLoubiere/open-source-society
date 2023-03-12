@@ -1,0 +1,1 @@
+const s="tag/projects/communication/instant-messaging",t="Messagerie instantanée",e="La liste des pages à propos des projets open source de messagerie instantanée.",a=[],n={id:s,title:t,summary:e,tags:a};export{n as default,s as id,e as summary,a as tags,t as title};

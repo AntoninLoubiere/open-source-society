@@ -1,1 +1,0 @@
-const t="The list of the list of the pages about the open source applications.",s="tag/projects/applications",a=[],o="Applications",e={summary:t,id:s,tags:a,title:o};export{e as default,s as id,t as summary,a as tags,o as title};

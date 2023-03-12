@@ -1,0 +1,1 @@
+const t="tag/projects/office-suite",e="Office Suite",s="The list of the pages about the open source office suite projects.",o=[],a={id:t,title:e,summary:s,tags:o};export{a as default,t as id,s as summary,o as tags,e as title};

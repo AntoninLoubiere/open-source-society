@@ -1,1 +1,0 @@
-const e="C'est un site web qui promeut l'open source. Il décrit comment l'open source fonctionne et a des pages sur les acteurs, les projets et les license utilisées.",t="",s=[],o="",n={summary:e,id:t,tags:s,title:o};export{n as default,t as id,e as summary,s as tags,o as title};

@@ -1,0 +1,1 @@
+const t="tag",s="Étiquettes",e="La liste des étiquettes utilisées sur ce site pour trier les pages.",a=[],i={id:t,title:s,summary:e,tags:a};export{i as default,t as id,e as summary,a as tags,s as title};
