@@ -10,7 +10,7 @@ OUTPUT_PATH = Path("src") / "routes"
 OUTPUT_TAGS_LIST = Path("src") / "lib" / "tags"  / "tags.json"
 
 # Repeated in config.ts
-EDIT_URL = "https://github.com/AntoninLoubiere/open-source-society/edit/main/pages/{path}"
+EDIT_URL = "https://github.com/AntoninLoubiere/open-source-society/edit/main/pages/{path}.md"
 GIT_DATE_COMMAND = ["git", "log", "-1", "--pretty=%cI", "path"]
 
 FIELDS_URLS_OPTIONAL = {

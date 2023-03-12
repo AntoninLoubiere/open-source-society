@@ -15,7 +15,7 @@ Il est encore dans une phase de développement et en cours de construction.
 
 <PageCardList pagesIds={['fr/acteurs', 'fr/licence', 'fr/projets']} />
 
-## Vous aimez l'Open source / Vous voullez nous aider ?
+## Vous aimez l'Open source / Vous voulez nous aider ?
 
 Vous pouvez nous rejoindre sur notre salon [Matrix](fr/projets/communication/matrix) [Open Source Society - General](https://matrix.to/#/!tRhsLigaGWSGSycDmy:matrix.org) pour discuter.
 Vous pouvez accéder à tous nos salons sur l'espace [Open Source Society](https://matrix.to/#/#open-source-society:matrix.org).
